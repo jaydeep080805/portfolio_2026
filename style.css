@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  color: white;
+}
+
+/* creates the animation for the home section */
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 41%;
+  }
+}
+
+@keyframes caret-blink {
+  0% {
+    border-color: orange;
+  }
+
+  50% {
+    border-color: rgb(137, 89, 0);
+  }
+
+  100% {
+    border-color: transparent;
+  }
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 1.25rem 0;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  list-style: none;
+  font-weight: 700;
+}
+
+/* get the links in the navlist */
+.navbar-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-list:hover {
+  cursor: pointer;
+}
+
+#home {
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#home h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: orange solid 2px;
+
+  animation:
+    typing 3s steps(60),
+    caret-blink 1s linear infinite normal;
+}
+
+#projects {
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 2rem;
+}
+
+.project-card-container {
+  margin-top: 5rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.project-card-image-container > img {
+  width: 30rem;
+}
+
+.card {
+  width: 30rem;
+  background-color: #222;
+  padding: 2rem;
+  border-radius: 0.5rem;
+
+  box-shadow: 0.5rem 0.5rem #333;
+
+  transition:
+    transform ease 200ms,
+    box-shadow ease 250ms;
+}
+
+.card:hover {
+  transform: translate(0, -10px);
+  box-shadow: 1.25rem 1.25rem #333;
+}
+
+/* select all children of the project-info class */
+.card section.project-info * {
+  padding-top: 1rem;
+  display: block;
+}
+
+.card section.project-info > h4 {
+  font-size: 1.5rem;
+}
+
+.card section.project-info > span {
+  padding-top: 0.25rem;
+  /* font-style: italic; */
+  color: #ccc;
+  font-weight: bold;
+}
+
+.card section.project-info > span > span {
+  display: inline;
+  font-style: normal;
+}
+
+.react-text {
+  color: #82e0ff;
+}
+
+.vite-text {
+  color: #f8ea7b;
+}
+
+.node-text {
+  color: #a4fba4;
+}
+
+.jsx-text {
+  color: #8585fe;
+}
+
+.section {
+  height: 50rem;
+}
+
+#about {
+  background-color: #333;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+
+  padding: 0 35rem;
+}
+
+#about h2 {
+  font-size: 2rem;
+}
+
+#about p {
+  font-size: 1.25rem;
+}
+
+footer {
+  height: 40rem;
+  background-color: #333;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5fr 1fr;
+  grid-template-areas: 
+  "contact socials"
+  "horizontal-line horizontal-line";
+}
+
+footer section.contact {
+  grid-area: contact;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  margin-right: 5rem;
+}
+
+footer section.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+footer section.contact button {
+  padding: 0.5rem 1rem;
+  background-color: #417aff;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  
+  transition: background-color ease 400ms, transform ease 150ms;
+}
+
+footer section.contact button:hover {
+  background-color: #2365ff;
+  cursor: pointer;
+  box-shadow: 0rem 0.25rem 0.25rem 0.25rem rgb(65, 65, 65);
+  transform: translate(0, -0.25rem);
+}
+
+footer section.socials {
+  grid-area: socials;
+
+  /* display: flex;
+  justify-content: start;
+  align-items: end; */
+  /* gap: 1rem; */
+
+  /* margin-left: 5rem; */
+}
+
+footer section.socials i {
+  background-color: #6e6e6e;
+  width: 2rem;
+  height: min-content;
+
+  padding: 0.75rem 0.75rem;
+  font-size: 2rem;
+  border-radius: 100%;
+  
+  transition: all ease 200ms;
+}
+
+footer section.socials i:hover {
+  background-color: white;
+  color: #222;
+  cursor: pointer;
+  transform: translate(0, -5px);
+}
+
+footer section .social-container {
+  display: flex;
+  justify-content: start;
+  align-items: center; 
+
+  margin-left: 5rem;
+  height: 100%;
+  gap: 1rem;
+}
+
+footer input, footer textarea {
+  width: 20rem;
+  padding: 0.5rem;
+  background-color: #555;
+  outline: none;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  font-weight: bold;
+  font-size: 1.25rem;
+  resize: none;
+}
+
+footer section.horizontal-line {
+  grid-area: horizontal-line;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px #999 solid;
+  margin: 0 20rem;
+}

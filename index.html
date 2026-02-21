@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section" id="home">
+        <h2>Hi, I'm Jay A Junior Software Engineer</h2>
+      </section>
+
+      <section class="section" id="about">
+        <h2>About</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, enim
+          sapiente expedita explicabo ipsa, beatae repellat doloremque dicta
+          repudiandae tempora soluta eligendi minima ab inventore numquam unde,
+          nam vitae. Repudiandae, enim. Error eos alias sed cumque voluptatem
+          iure rerum at eius suscipit facilis incidunt repellendus mollitia
+          perspiciatis tempore culpa, a doloribus ipsam tenetur enim tempora
+          blanditiis reiciendis quas ut. Dolores voluptatum, itaque eius
+          exercitationem quos incidunt aut fugit delectus! Soluta et quisquam
+          quidem explicabo repellat.
+        </p>
+
+        <p>skills and tools</p>
+      </section>
+
+      <section class="section" id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-card-container">
+          <article class="card">
+            <div class="project-card-image-container">
+              <img
+                src="./images/sikh_essence.png"
+                alt="Screenshot of Sikh Essence project homepage"
+              />
+            </div>
+
+            <section class="project-info">
+              <h4>Sikh Essence</h4>
+
+              <span>
+                Tools used: <span class="react-text">React</span>,
+                <span class="vite-text">Vite</span>,
+                <span class="node-text">Node.js</span>
+              </span>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                accusamus natus minima fugiat alias maiores non blanditiis minus
+                exercitationem, nihil ducimus? Cum sequi aliquid similique.
+              </p>
+            </section>
+          </article>
+
+          <article class="card">
+            <div class="project-card-image-container">
+              <img
+                src="./images/dew_point.png"
+                alt="Screenshot of dew point calculator front page"
+              />
+            </div>
+
+            <section class="project-info">
+              <h4>Dew Point Calculator</h4>
+
+              <span>
+                Tools used: <span class="react-text">React</span>,
+                <span class="vite-text">JavaScript</span>,
+                <span class="jsx-text">JSX</span>
+              </span>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                accusamus natus minima fugiat alias maiores non blanditiis minus
+                exercitationem, nihil ducimus? Cum sequi aliquid similique.
+              </p>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <section class="contact">
+        <form>
+          <input type="text" name="email" id="email" placeholder="Email..." />
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            placeholder="Subject..."
+          />
+          <!-- <input type="text" name="" id="text-input" placeholder="Text..." /> -->
+          <textarea
+            name="text-input"
+            id="text-input"
+            rows="4"
+            cols="1"
+            placeholder="Text..."
+          ></textarea>
+          <button id="contact-submit-button" type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section class="socials">
+        <!-- <p>instagram</p> -->
+        <div class="social-container">
+          <a href="https://uk.linkedin.com/in/jaydeep-rayat-9390a3222">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="https://github.com/jaydeep080805">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <!-- <p>facebook</p> -->
+      </section>
+
+      <section class="horizontal-line">Made with ♥️</section>
+    </footer>
+  </body>
+</html>
