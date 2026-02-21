@@ -89,8 +89,14 @@ nav {
   gap: 4rem;
 }
 
-.project-card-image-container > img {
+.project-card-image-container img {
   width: 30rem;
+  transition: filter ease 200ms;
+}
+
+.project-card-image-container img:hover {
+  filter: opacity(60%);
+  
 }
 
 .card {
