@@ -17,15 +17,7 @@
 }
 
 @keyframes caret-blink {
-  0% {
-    border-color: orange;
-  }
-
   50% {
-    border-color: rgb(137, 89, 0);
-  }
-
-  100% {
     border-color: transparent;
   }
 }
@@ -68,9 +60,10 @@ nav {
   overflow: hidden;
   white-space: nowrap;
   border-right: orange solid 2px;
+  font-family: monospace;
 
   animation:
-    typing 3s steps(60),
+    typing 3s steps(38),
     caret-blink 1s linear infinite normal;
 }
 
@@ -96,7 +89,6 @@ nav {
 
 .project-card-image-container img:hover {
   filter: opacity(60%);
-  
 }
 
 .card {
@@ -185,9 +177,9 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 5fr 1fr;
-  grid-template-areas: 
-  "contact socials"
-  "horizontal-line horizontal-line";
+  grid-template-areas:
+    "contact socials"
+    "horizontal-line horizontal-line";
 }
 
 footer section.contact {
@@ -206,6 +198,13 @@ footer section.contact form {
   gap: 1rem;
 }
 
+footer section.contact form label {
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5rem;
+}
+
 footer section.contact button {
   padding: 0.5rem 1rem;
   background-color: #417aff;
@@ -213,8 +212,10 @@ footer section.contact button {
   border-radius: 0.25rem;
   font-weight: bold;
   font-size: 1.25rem;
-  
-  transition: background-color ease 400ms, transform ease 150ms;
+
+  transition:
+    background-color ease 400ms,
+    transform ease 150ms;
 }
 
 footer section.contact button:hover {
@@ -243,7 +244,7 @@ footer section.socials i {
   padding: 0.75rem 0.75rem;
   font-size: 2rem;
   border-radius: 100%;
-  
+
   transition: all ease 200ms;
 }
 
@@ -257,14 +258,15 @@ footer section.socials i:hover {
 footer section .social-container {
   display: flex;
   justify-content: start;
-  align-items: center; 
+  align-items: center;
 
   margin-left: 5rem;
   height: 100%;
   gap: 1rem;
 }
 
-footer input, footer textarea {
+footer input,
+footer textarea {
   width: 20rem;
   padding: 0.5rem;
   background-color: #555;
@@ -280,10 +282,73 @@ footer input, footer textarea {
 
 footer section.horizontal-line {
   grid-area: horizontal-line;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 2px #999 solid;
   margin: 0 20rem;
+}
+
+@media (200px <= width <= 600px) {
+  #home h2 {
+    text-wrap: wrap;
+    display: inline-block;
+    animation: none;
+    border: none;
+    margin: 0 1rem;
+  }
+
+  .section {
+    min-height: 100vh;
+  }
+
+  #about {
+    /* reset the padding */
+    padding: 0 1rem;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  #projects {
+    min-height: fit-content;
+    padding-bottom: 2rem;
+  }
+
+  .project-card-container {
+    flex-direction: column;
+  }
+
+  .card {
+    max-width: 70vw;
+  }
+
+  .project-card-image-container img {
+    max-width: 70vw;
+    transition: filter ease 200ms;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  footer * {
+    margin: 0 !important;
+  }
+
+  footer section.contact {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer section.horizontal-line {
+    width: 80%;
+    padding: 1rem 0;
+  }
 }
