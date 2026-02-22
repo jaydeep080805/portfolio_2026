@@ -1,4 +1,4 @@
-import express, { text } from "express";
+import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import "dotenv/config";
