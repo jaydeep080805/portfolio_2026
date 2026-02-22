@@ -4,6 +4,7 @@ export const checkEmailValid = (email) => {
   return pattern.test(email);
 };
 
+// function to animate the Toast message to come in from the top and leave back out the top
 export const animateToastMessage = (toastMessage, toastStatus, toastText) => {
   if (toastStatus == "error") {
     toastMessage.classList.add("error-style");
