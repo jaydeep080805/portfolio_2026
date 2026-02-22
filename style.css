@@ -84,6 +84,9 @@ nav {
 
 .project-card-image-container img {
   width: 30rem;
+  max-height: 20rem;
+  object-fit: contain;
+  
   transition: filter ease 200ms;
 }
 
@@ -145,6 +148,14 @@ nav {
 
 .jsx-text {
   color: #8585fe;
+}
+
+.css-text {
+  color: #5151fc;
+}
+
+.api-text {
+  color: #d87cff;
 }
 
 .section {
