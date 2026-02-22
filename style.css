@@ -1,9 +1,50 @@
+:root {
+  --primary-text-color: white;
+  --primary-bg-color: #444;
+  --alternate-section-color: #333;
+
+  --card-bg-color: #222;
+  --card-subtle-text-color: #ccc;
+
+  --success-bg-color: #48f55f4e;
+  --success-border-color: #51ff41c1;
+
+  --error-bg-color: #f548484e;
+  --error-border-color: #ff4141c1;
+
+  --box-shadow-color: #333;
+
+  --input-bg-color: #555;
+
+  --icon-bg-color: #555;
+  --icon-hover-bg-color: white;
+  --icon-hover-text-color: #222;
+
+  --horizontal-line-color: #999;
+
+  --button-bg-color: #417aff;
+  --button-bg-hover-color: #2365ff;
+  --button-shadow-hover-color: #414141;
+
+  --react-text-color: #82e0ff;
+  --vite-text-color: #f8ea7b;
+  --node-text-color: #a4fba4;
+  --jsx-text-color: #8585fe;
+  --css-text-color: #5151fc;
+  --api-text-color: #d87cff;
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
-  color: white;
+  color: var(--primary-text-color);
+}
+
+/* change the highlight colour */
+*::selection {
+  background-color: orange;
 }
 
 /* creates the animation for the home section */
@@ -23,14 +64,14 @@
 }
 
 .success-style {
-  background-color: #48f55f4e;
-  border: 2px solid #51ff41c1;
+  background-color: var(--success-bg-color);
+  border: 2px solid var(--success-border-color);
   display: block;
 }
 
 .error-style {
-  background-color: #f548484e;
-  border: 2px solid #ff4141c1;
+  background-color: var(--error-bg-color);
+  border: 2px solid var(--error-border-color);
   display: block;
 }
 
@@ -55,8 +96,8 @@
 }
 
 nav {
-  background-color: #333;
-  color: white;
+  background-color: var(--alternate-section-color);
+  color: var(--primary-text-color);
   padding: 1.25rem 0;
 }
 
@@ -71,7 +112,7 @@ nav {
 
 /* get the links in the navlist */
 .navbar-list a {
-  color: white;
+  color: var(--primary-text-color);
   text-decoration: none;
 }
 
@@ -80,7 +121,7 @@ nav {
 }
 
 #home {
-  background-color: #444;
+  background-color: var(--primary-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +141,7 @@ nav {
 }
 
 #projects {
-  background-color: #444;
+  background-color: var(--primary-bg-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,11 +169,11 @@ nav {
 
 .card {
   width: 30rem;
-  background-color: #222;
+  background-color: var(--card-bg-color);
   padding: 2rem;
   border-radius: 0.5rem;
 
-  box-shadow: 0.5rem 0.5rem #333;
+  box-shadow: 0.5rem 0.5rem var(--box-shadow-color);
 
   transition:
     transform ease 200ms,
@@ -141,7 +182,7 @@ nav {
 
 .card:hover {
   transform: translate(0, -10px);
-  box-shadow: 1.25rem 1.25rem #333;
+  box-shadow: 1.25rem 1.25rem var(--box-shadow-color);
 }
 
 /* select all children of the project-info class */
@@ -157,7 +198,7 @@ nav {
 .card section.project-info > span {
   padding-top: 0.25rem;
   /* font-style: italic; */
-  color: #ccc;
+  color: var(--card-subtle-text-color);
   font-weight: bold;
 }
 
@@ -167,27 +208,27 @@ nav {
 }
 
 .react-text {
-  color: #82e0ff;
+  color: var(--react-text-color);
 }
 
 .vite-text {
-  color: #f8ea7b;
+  color: var(--vite-text-color);
 }
 
 .node-text {
-  color: #a4fba4;
+  color: var(--node-text-color);
 }
 
 .jsx-text {
-  color: #8585fe;
+  color: var(--jsx-text-color);
 }
 
 .css-text {
-  color: #5151fc;
+  color: var(--css-text-color);
 }
 
 .api-text {
-  color: #d87cff;
+  color: var(--api-text-color);
 }
 
 .section {
@@ -195,7 +236,7 @@ nav {
 }
 
 #about {
-  background-color: #333;
+  background-color: var(--alternate-section-color);
 
   display: flex;
   justify-content: center;
@@ -215,7 +256,7 @@ nav {
 
 footer {
   height: 40rem;
-  background-color: #333;
+  background-color: var(--alternate-section-color);
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -244,13 +285,13 @@ footer section.contact form {
 footer section.contact form label {
   font-weight: bold;
   font-size: 1.25rem;
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid var(--horizontal-line-color);
   padding-bottom: 0.5rem;
 }
 
 footer section.contact button {
   padding: 0.5rem 1rem;
-  background-color: #417aff;
+  background-color: var(--button-bg-color);
   border: none;
   border-radius: 0.25rem;
   font-weight: bold;
@@ -262,25 +303,20 @@ footer section.contact button {
 }
 
 footer section.contact button:hover {
-  background-color: #2365ff;
+  background-color: var(--button-bg-hover-color);
   cursor: pointer;
-  box-shadow: 0rem 0.25rem 0.25rem 0.25rem rgb(65, 65, 65);
+  box-shadow: 0rem 0.25rem 0.25rem 0.25rem var(--button-shadow-hover-color);
   transform: translate(0, -0.25rem);
 }
 
 footer section.socials {
   grid-area: socials;
-
-  /* display: flex;
-  justify-content: start;
-  align-items: end; */
-  /* gap: 1rem; */
-
-  /* margin-left: 5rem; */
 }
 
 footer section.socials i {
-  background-color: #6e6e6e;
+  background-color: var(--icon-bg-color);
+  color: var(--primary-text-color);
+
   width: 2rem;
   height: min-content;
 
@@ -292,8 +328,8 @@ footer section.socials i {
 }
 
 footer section.socials i:hover {
-  background-color: white;
-  color: #222;
+  background-color: var(--icon-hover-bg-color);
+  color: var(--icon-hover-text-color);
   cursor: pointer;
   transform: translate(0, -5px);
 }
@@ -312,7 +348,7 @@ footer input,
 footer textarea {
   width: 20rem;
   padding: 0.5rem;
-  background-color: #555;
+  background-color: var(--input-bg-color);
   outline: none;
 
   border: none;
@@ -329,7 +365,7 @@ footer section.horizontal-line {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 2px #999 solid;
+  border-top: 2px var(--horizontal-line-color) solid;
   margin: 0 20rem;
 }
 
