@@ -30,7 +30,7 @@ app.post("/send-email", async (req, res) => {
     from: process.env.MY_EMAIL,
     to: process.env.MY_RECEIPT_EMAIL,
     subject: formData.emailSubject,
-    text: formData.emailBody,
+    text: `${formData.emailBody}\n\nSent from: ${formData.userEmail}`,
   };
 
   const messageToUser = {
