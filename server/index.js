@@ -46,11 +46,11 @@ app.post("/send-email", async (req, res) => {
 
     const emailToUserInfo = await transporter.sendMail(messageToUser);
     console.log("Sent:", emailToUserInfo.messageId);
+    return res.status(200).json({ isSuccessful: true });
   } catch (err) {
     console.error(err);
+    return res.status(400).json({ isSuccessful: false });
   }
-
-  return res.status(200);
 });
 
 app.listen(port, () => {

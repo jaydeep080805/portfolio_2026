@@ -22,6 +22,38 @@
   }
 }
 
+.success-style {
+  background-color: #48f55f4e;
+  border: 2px solid #51ff41c1;
+  display: block;
+}
+
+.error-style {
+  background-color: #f548484e;
+  border: 2px solid #ff4141c1;
+  display: block;
+}
+
+/* this is used to display error or success messages */
+#toast-message {
+  position: fixed;
+  top: 2rem;
+
+  /* this centers the element */
+  right: 0;
+  left: 0;
+  margin-inline: auto;
+
+  max-width: 20rem;
+
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+
+  /* start it off the screen */
+  transform: translate(0, -200px);
+}
+
 nav {
   background-color: #333;
   color: white;
@@ -86,7 +118,7 @@ nav {
   width: 30rem;
   max-height: 20rem;
   object-fit: contain;
-  
+
   transition: filter ease 200ms;
 }
 
