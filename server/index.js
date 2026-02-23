@@ -3,8 +3,7 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 import "dotenv/config";
 
-const app = express();
-const port = 3000;
+export const app = express();
 
 // used becuase addresses are different (i think)
 app.use(cors());
@@ -51,8 +50,4 @@ app.post("/send-email", async (req, res) => {
     console.error(err);
     return res.status(400).json({ isSuccessful: false });
   }
-});
-
-app.listen(port, () => {
-  console.log(`server listening on port ${port}`);
 });
