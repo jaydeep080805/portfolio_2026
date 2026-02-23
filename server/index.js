@@ -3,7 +3,7 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 import "dotenv/config";
 
-export const app = express();
+const app = express();
 
 // used becuase addresses are different (i think)
 app.use(cors());
@@ -24,6 +24,17 @@ const transporter = nodemailer.createTransport({
 app.post("/send-email", async (req, res) => {
   console.log("running");
   const formData = req.body;
+
+  try {
+    for (let item in formData) {
+      // if the inputs are empty
+      if (String(formData[item]).trim().length <= 0) {
+        throw new Error("Input shouldn't be empty");
+      }
+    }
+  } catch (err) {
+    return res.status(400).json({ isSuccessful: false });
+  }
 
   const messageToMe = {
     from: process.env.MY_EMAIL,
@@ -51,3 +62,5 @@ app.post("/send-email", async (req, res) => {
     return res.status(400).json({ isSuccessful: false });
   }
 });
+
+export { app };
