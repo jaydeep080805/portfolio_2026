@@ -93,6 +93,9 @@
 
   /* start it off the screen */
   transform: translate(0, -200px);
+
+  /* keep the message in front of every other element */
+  z-index: 10000;
 }
 
 nav {
