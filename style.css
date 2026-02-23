@@ -1,5 +1,7 @@
 :root {
   --primary-text-color: white;
+  --primary-text-hover-color: #aaa;
+  
   --primary-bg-color: #444;
   --alternate-section-color: #333;
 
@@ -117,10 +119,13 @@ nav {
 .navbar-list a {
   color: var(--primary-text-color);
   text-decoration: none;
+
+  transition: color ease 200ms;
 }
 
-.navbar-list:hover {
+.navbar-list a:hover {
   cursor: pointer;
+  color: var(--primary-text-hover-color);
 }
 
 #home {
