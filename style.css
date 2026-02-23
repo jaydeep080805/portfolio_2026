@@ -8,10 +8,12 @@
   --card-bg-color: #222;
   --card-subtle-text-color: #ccc;
 
-  --success-bg-color: #48f55f4e;
-  --success-border-color: #51ff41c1;
+  /* --success-bg-color: #48f55fcc;
+  --success-border-color: #51ff41c1; */
+  --success-bg-color: #89cff0d6;
+  --success-border-color: #89CFF0;
 
-  --error-bg-color: #f548484e;
+  --error-bg-color: #f54848ca;
   --error-border-color: #ff4141c1;
 
   --box-shadow-color: #333;
@@ -30,10 +32,18 @@
 
   --react-text-color: #82e0ff;
   --vite-text-color: #f8ea7b;
+  --javascript-text-color: #fde423;
   --node-text-color: #a4fba4;
   --jsx-text-color: #8585fe;
   --css-text-color: #5151fc;
   --api-text-color: #d87cff;
+  --html-text-color: #ff9557;
+  --docker-text-color: #354dff;
+  --tailwind-text-color: #99ccff;
+  --git-text-color: #ffffff;
+  --sql-text-color: #3053ff;
+  --python-text-color: #76ff7f;
+  
 }
 
 * {
@@ -227,6 +237,10 @@ nav {
   color: var(--vite-text-color);
 }
 
+.javascript-text {
+  color: var(--javascript-text-color);
+}
+
 .node-text {
   color: var(--node-text-color);
 }
@@ -243,8 +257,13 @@ nav {
   color: var(--api-text-color);
 }
 
+.tailwind-text {
+  color: var(--tailwind-text-color);
+}
+
 .section {
-  height: 50rem;
+  min-height: 50rem;
+  padding: 2rem 0;
 }
 
 #about {
@@ -253,9 +272,121 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  flex-direction: column;
 
-  padding: 0 35rem;
+  text-align: center;
+  gap: 5rem;
+}
+
+#about .about-section {
+  /* center the text dynamically across devices */
+  margin: 0 auto;
+  max-width: 80%;
+  min-width: 60%;
+}
+
+#about .about-section h2 {
+  margin-bottom: 2rem;
+}
+
+.horizontal-line {
+  border-top: 2px var(--horizontal-line-color) solid;
+  min-width: 60%;
+  max-width: 80%;
+  height: 1rem;
+}
+
+/* keep the skills section away from edges dynamically */
+.skills-section {
+  max-width: 50%;
+}
+
+.skills-section > h2 {
+  margin-bottom: 2rem;
+}
+
+.skills-section .skill-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stack-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blank {
+  position: relative;
+  width: 15rem;
+  height: 1.25rem;
+
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.colour {
+  position: absolute;
+  height: 1.25rem;
+
+  border-radius: 0.5rem 0 0 0.5rem;
+
+  top: 0;
+  left: 0;
+}
+
+.react-skill-bar .colour {
+  background-color: var(--react-text-color);
+  width: 10.5rem;
+}
+
+.javascript-skill-bar .colour {
+  background-color: var(--vite-text-color);
+  width: 12rem;
+}
+
+.html-skill-bar .colour {
+  background-color: var(--html-text-color);
+  width: 13.5rem;
+}
+
+.css-skill-bar .colour {
+  background-color: var(--css-text-color);
+  width: 9rem;
+}
+
+.node-skill-bar .colour {
+  background-color: var(--node-text-color);
+  width: 8rem;
+}
+
+.docker-skill-bar .colour {
+  background-color: var(--docker-text-color);
+  width: 6rem;
+}
+
+.tailwind-skill-bar .colour {
+  background-color: var(--tailwind-text-color);
+  width: 12rem;
+}
+
+.git-skill-bar .colour {
+  background-color: var(--git-text-color);
+  width: 13.5rem;
+}
+
+.sql-skill-bar .colour {
+  background-color: var(--sql-text-color);
+  width: 11.5rem;
+}
+
+.python-skill-bar .colour {
+  background-color: var(--python-text-color);
+  width: 13rem;
 }
 
 #about h2 {
@@ -391,16 +522,26 @@ footer section.horizontal-line {
   }
 
   .section {
-    min-height: 100vh;
+    min-height: 50rem;
+    height: fit-content;
   }
 
   #about {
     /* reset the padding */
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     text-align: center;
 
     display: flex;
     flex-direction: column;
+  }
+
+  .skills-section {
+    max-width: 100%;
+  }
+
+  .skills-section .skill-bar-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   #projects {
