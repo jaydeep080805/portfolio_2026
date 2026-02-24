@@ -136,32 +136,3 @@ projectInfo.map((project) => {
   // add the card to the dom
   projectCardContainer.append(cardElement);
 });
-
-{
-  /* <article class="card">
-  <div class="project-card-image-container">
-    <a href="https://sikhessence.co.uk">
-      <img
-        src="./images/sikh_essence.png"
-        alt="Screenshot of Sikh Essence project homepage"
-      />
-    </a>
-  </div>
-
-  <section class="project-info">
-    <h4>Sikh Essence</h4>
-
-    <span>
-      Tools used: <span class="react-text">React</span>,
-      <span class="vite-text">Vite</span>,
-      <span class="tailwind-text">Tailwind</span>
-    </span>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, accusamus
-      natus minima fugiat alias maiores non blanditiis minus exercitationem,
-      nihil ducimus? Cum sequi aliquid similique.
-    </p>
-  </section>
-</article>; */
-}
