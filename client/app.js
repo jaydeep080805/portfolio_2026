@@ -2,6 +2,7 @@ const toastMessage = document.getElementById("toast-message");
 const contactSubmitButton = document.getElementById("contact-submit-button");
 import { API_URL } from "./config.js";
 import { animateToastMessage, checkEmailValid } from "./utils.js";
+import { projectInfo } from "./projectInfo.js";
 
 contactSubmitButton.addEventListener("click", async (e) => {
   e.preventDefault();
@@ -63,3 +64,104 @@ contactSubmitButton.addEventListener("click", async (e) => {
     console.error("Network error:", err);
   }
 });
+
+const projectCardContainer = document.getElementsByClassName(
+  "project-card-container",
+)[0];
+
+projectInfo.map((project) => {
+  const { link, image, imageAlt, title, tools, description } = project;
+
+  const cardElement = document.createElement("article");
+  cardElement.classList.add("card");
+
+  // create the image container
+  const projectCardImageContainerElement = document.createElement("div");
+  projectCardImageContainerElement.classList.add(
+    "project-card-image-container",
+  );
+
+  // create the link
+  const hyperLinkElement = document.createElement("a");
+  hyperLinkElement.href = link;
+
+  // create the image
+  const imageElement = document.createElement("img");
+  imageElement.src = image;
+  imageElement.alt = imageAlt;
+
+  // ======== IMAGE SECTION ======== //
+  // add the image container to the card
+  cardElement.appendChild(projectCardImageContainerElement);
+  // add the hyperlink and image to the image container
+  projectCardImageContainerElement.appendChild(hyperLinkElement);
+  // wrap the image in the <a></a> tag
+  hyperLinkElement.appendChild(imageElement);
+
+  // ======== INFO SECTION ======== //
+  const projectInfoSectionElement = document.createElement("div");
+  projectInfoSectionElement.classList.add("project-info");
+
+  const headingElement = document.createElement("h2");
+  headingElement.textContent = title;
+
+  // loop through the tools
+  const toolsUsedElement = document.createElement("span");
+  toolsUsedElement.textContent = "Tools used: ";
+  tools.map((t, index) => {
+    const toolTextSpan = document.createElement("span");
+    toolTextSpan.classList.add(`${t.toLowerCase()}-text`);
+
+    if (index + 1 == tools.length) {
+      toolTextSpan.textContent = `${t}`;
+    } else {
+      toolTextSpan.textContent = `${t}, `;
+    }
+
+    console.log(toolTextSpan);
+
+    // toolsUsedElement.textContent = toolsUsedElement.textContent + `${t}, `;
+    toolsUsedElement.appendChild(toolTextSpan);
+  });
+
+  const descriptionElement = document.createElement("p");
+  descriptionElement.textContent = description;
+
+  projectInfoSectionElement.appendChild(headingElement);
+  projectInfoSectionElement.appendChild(toolsUsedElement);
+  projectInfoSectionElement.appendChild(descriptionElement);
+
+  cardElement.appendChild(projectInfoSectionElement);
+
+  // add the card to the dom
+  projectCardContainer.append(cardElement);
+});
+
+{
+  /* <article class="card">
+  <div class="project-card-image-container">
+    <a href="https://sikhessence.co.uk">
+      <img
+        src="./images/sikh_essence.png"
+        alt="Screenshot of Sikh Essence project homepage"
+      />
+    </a>
+  </div>
+
+  <section class="project-info">
+    <h4>Sikh Essence</h4>
+
+    <span>
+      Tools used: <span class="react-text">React</span>,
+      <span class="vite-text">Vite</span>,
+      <span class="tailwind-text">Tailwind</span>
+    </span>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, accusamus
+      natus minima fugiat alias maiores non blanditiis minus exercitationem,
+      nihil ducimus? Cum sequi aliquid similique.
+    </p>
+  </section>
+</article>; */
+}
