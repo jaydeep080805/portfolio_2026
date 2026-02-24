@@ -2,7 +2,7 @@ const toastMessage = document.getElementById("toast-message");
 const contactSubmitButton = document.getElementById("contact-submit-button");
 import { API_URL } from "./config.js";
 import { animateToastMessage, checkEmailValid } from "./utils.js";
-import { projectInfo } from "./projectObject.js";
+import { projectInfo } from "./projectList.js";
 
 /* 
 =====================================================
