@@ -1,7 +1,7 @@
 :root {
   --primary-text-color: white;
   --primary-text-hover-color: #aaa;
-  
+
   --primary-bg-color: #444;
   --alternate-section-color: #333;
 
@@ -11,7 +11,7 @@
   /* --success-bg-color: #48f55fcc;
   --success-border-color: #51ff41c1; */
   --success-bg-color: #89cff0d6;
-  --success-border-color: #89CFF0;
+  --success-border-color: #89cff0;
 
   --error-bg-color: #f54848ca;
   --error-border-color: #ff4141c1;
@@ -35,7 +35,7 @@
   --javascript-text-color: #fde423;
   --node-text-color: #a4fba4;
   --jsx-text-color: #8585fe;
-  --css-text-color: #5151fc;
+  --css-text-color: #5192fc;
   --api-text-color: #d87cff;
   --html-text-color: #ff9557;
   --docker-text-color: #354dff;
@@ -43,7 +43,9 @@
   --git-text-color: #ffffff;
   --sql-text-color: #3053ff;
   --python-text-color: #76ff7f;
-  
+  --express-text-color: #ff5c5c;
+  --jest-text-color: #FFA500;
+  --supertest-text-color: #03c03c  ;
 }
 
 * {
@@ -162,7 +164,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   background-color: var(--primary-bg-color);
   height: min-content;
   padding: 2rem 0;
@@ -229,39 +231,6 @@ nav {
   font-style: normal;
 }
 
-
-.react-text {
-  color: var(--react-text-color);
-}
-
-.vite-text {
-  color: var(--vite-text-color);
-}
-
-.javascript-text {
-  color: var(--javascript-text-color);
-}
-
-.node-text {
-  color: var(--node-text-color);
-}
-
-.jsx-text {
-  color: var(--jsx-text-color);
-}
-
-.css-text {
-  color: var(--css-text-color);
-}
-
-.api-text {
-  color: var(--api-text-color);
-}
-
-.tailwind-text {
-  color: var(--tailwind-text-color);
-}
-
 .section {
   min-height: 50rem;
   padding: 2rem 0;
@@ -294,7 +263,6 @@ nav {
   border-top: 2px var(--horizontal-line-color) solid;
   min-width: 60%;
   max-width: 80%;
-  height: 1rem;
 }
 
 /* keep the skills section away from edges dynamically */
@@ -309,12 +277,18 @@ nav {
 .skills-section .skill-bar-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .stack-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stack-container .stack-content {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
@@ -338,56 +312,6 @@ nav {
 
   top: 0;
   left: 0;
-}
-
-.react-skill-bar .colour {
-  background-color: var(--react-text-color);
-  width: 10.5rem;
-}
-
-.javascript-skill-bar .colour {
-  background-color: var(--vite-text-color);
-  width: 12rem;
-}
-
-.html-skill-bar .colour {
-  background-color: var(--html-text-color);
-  width: 13.5rem;
-}
-
-.css-skill-bar .colour {
-  background-color: var(--css-text-color);
-  width: 9rem;
-}
-
-.node-skill-bar .colour {
-  background-color: var(--node-text-color);
-  width: 8rem;
-}
-
-.docker-skill-bar .colour {
-  background-color: var(--docker-text-color);
-  width: 6rem;
-}
-
-.tailwind-skill-bar .colour {
-  background-color: var(--tailwind-text-color);
-  width: 12rem;
-}
-
-.git-skill-bar .colour {
-  background-color: var(--git-text-color);
-  width: 13.5rem;
-}
-
-.sql-skill-bar .colour {
-  background-color: var(--sql-text-color);
-  width: 11.5rem;
-}
-
-.python-skill-bar .colour {
-  background-color: var(--python-text-color);
-  width: 13rem;
 }
 
 #about h2 {

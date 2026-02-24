@@ -3,6 +3,7 @@ const contactSubmitButton = document.getElementById("contact-submit-button");
 import { API_URL } from "./config.js";
 import { animateToastMessage, checkEmailValid } from "./utils.js";
 import { projectInfo } from "./projectList.js";
+import { toolsList } from "./toolsList.js";
 
 /* 
 =====================================================
@@ -122,7 +123,8 @@ projectInfo.map((project) => {
   toolsUsedElement.textContent = "Tools used: ";
   tools.map((t, index) => {
     const toolTextSpan = document.createElement("span");
-    toolTextSpan.classList.add(`${t.toLowerCase()}-text`);
+    // toolTextSpan.classList.add(`${t.toLowerCase()}-text`);
+    toolTextSpan.style.color = `var(--${t.toLowerCase()}-text-color)`;
 
     if (index + 1 == tools.length) {
       toolTextSpan.textContent = `${t}`;
@@ -158,3 +160,51 @@ const skillBarContainer = document.getElementsByClassName(
   "skill-bar-container",
 )[0];
 
+for (let stack in toolsList) {
+  // create the seperate containers and add it the skill bar container
+  // this will be used so that the heading and bars can be in a flex col
+  const stackContainer = document.createElement("section");
+  stackContainer.classList.add("stack-container");
+  skillBarContainer.appendChild(stackContainer);
+
+  // create and add the headings to the stack container within the skill bar container
+  const heading = document.createElement("h2");
+  heading.textContent = stack;
+  stackContainer.appendChild(heading);
+
+  // create a stack content which contains the actual bars
+  // this allows flex to work in a col with the heading in the container
+  const stackContent = document.createElement("div");
+  stackContent.classList.add("stack-content");
+  stackContainer.appendChild(stackContent);
+
+  toolsList[stack].map((tool) => {
+    const { name, fillAmount } = tool;
+
+    // creates the container for both the skill text and the bar
+    const skillContainer = document.createElement("div");
+    skillContainer.classList.add("skill");
+    stackContent.appendChild(skillContainer);
+
+    // create the name span element for the skill
+    const skillNameElement = document.createElement("p");
+    skillNameElement.style.fontWeight = "bold";
+    skillNameElement.style.marginBottom = "0.25rem";
+    skillNameElement.style.fontFamily = "monospace";
+    skillNameElement.textContent = name;
+    skillContainer.appendChild(skillNameElement);
+
+    // creates the empty bar
+    const skillBar = document.createElement("div");
+    skillBar.classList.add("blank");
+    skillContainer.appendChild(skillBar);
+
+    // adds the colour dynamically to the bar
+    // adds both the colour and the sizing
+    const skillFillAmount = document.createElement("div");
+    skillFillAmount.classList.add("colour");
+    skillFillAmount.style.backgroundColor = `var(--${name.toLowerCase()}-text-color)`;
+    skillFillAmount.style.width = `${fillAmount}%`;
+    skillBar.appendChild(skillFillAmount);
+  });
+}

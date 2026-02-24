@@ -32,4 +32,16 @@ export const projectInfo = [
                 exercitationem, nihil ducimus? Cum sequi aliquid similique.
                 `,
   },
+
+  {
+    link: "#",
+    image: "./images/portfolio.png",
+    imageAlt: "Screenshot of weather app front page",
+    title: "Porfolio (this site)",
+    tools: ["JavaScript", "Express", "Jest", "Supertest"],
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                accusamus natus minima fugiat alias maiores non blanditiis minus
+                exercitationem, nihil ducimus? Cum sequi aliquid similique.
+                `,
+  },
 ];
