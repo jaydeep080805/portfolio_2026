@@ -208,26 +208,27 @@ nav {
 }
 
 /* select all children of the project-info class */
-.card section.project-info * {
+.card div.project-info * {
   padding-top: 1rem;
   display: block;
 }
 
-.card section.project-info > h4 {
+.card div.project-info > h4 {
   font-size: 1.5rem;
 }
 
-.card section.project-info > span {
+.card div.project-info > span {
   padding-top: 0.25rem;
   /* font-style: italic; */
   color: var(--card-subtle-text-color);
   font-weight: bold;
 }
 
-.card section.project-info > span > span {
+.card div.project-info > span > span {
   display: inline;
   font-style: normal;
 }
+
 
 .react-text {
   color: var(--react-text-color);
