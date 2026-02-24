@@ -2,7 +2,13 @@ const toastMessage = document.getElementById("toast-message");
 const contactSubmitButton = document.getElementById("contact-submit-button");
 import { API_URL } from "./config.js";
 import { animateToastMessage, checkEmailValid } from "./utils.js";
-import { projectInfo } from "./projectInfo.js";
+import { projectInfo } from "./projectObject.js";
+
+/* 
+=====================================================
+======== HANDLE CONTACT FORM SUBMISSION ======== 
+=====================================================
+*/
 
 contactSubmitButton.addEventListener("click", async (e) => {
   e.preventDefault();
@@ -65,6 +71,12 @@ contactSubmitButton.addEventListener("click", async (e) => {
   }
 });
 
+/* 
+=====================================================
+======== ADDING THE PROJECT CARDS TO THE DOM ======== 
+=====================================================
+*/
+
 const projectCardContainer = document.getElementsByClassName(
   "project-card-container",
 )[0];
@@ -118,7 +130,7 @@ projectInfo.map((project) => {
       toolTextSpan.textContent = `${t}, `;
     }
 
-    console.log(toolTextSpan);
+    // console.log(toolTextSpan);
 
     // toolsUsedElement.textContent = toolsUsedElement.textContent + `${t}, `;
     toolsUsedElement.appendChild(toolTextSpan);
@@ -136,3 +148,13 @@ projectInfo.map((project) => {
   // add the card to the dom
   projectCardContainer.append(cardElement);
 });
+
+/* 
+=====================================================
+======== ADDING SKILLS TO DOM ======== 
+=====================================================
+*/
+const skillBarContainer = document.getElementsByClassName(
+  "skill-bar-container",
+)[0];
+
