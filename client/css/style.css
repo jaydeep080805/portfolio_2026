@@ -90,7 +90,7 @@
     width: 0%;
   }
   to {
-    width: 41%;
+    width: 100%;
   }
 }
 
@@ -172,14 +172,14 @@ nav {
   font-size: 2rem;
 }
 
-#home h2 {
+.typing-animation-container h2 {
   overflow: hidden;
   white-space: nowrap;
   border-right: orange solid 2px;
   font-family: monospace;
 
   animation:
-    typing 3s steps(38),
+    typing 3s steps(40),
     caret-blink 1s linear infinite normal;
 }
 
