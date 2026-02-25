@@ -1,13 +1,23 @@
 :root {
+
+  /* 
+  PRIMARY VARIABLES
+  */
   --primary-text-color: white;
   --primary-text-hover-color: #aaa;
 
   --primary-bg-color: #444;
   --alternate-section-color: #333;
 
+  /* 
+  PROJECT CARD VARIABLES
+  */
   --card-bg-color: #222;
   --card-subtle-text-color: #ccc;
 
+  /* 
+  TOAST VARIABLES
+   */
   /* --success-bg-color: #48f55fcc;
   --success-border-color: #51ff41c1; */
   --success-bg-color: #89cff0d6;
@@ -16,20 +26,27 @@
   --error-bg-color: #f54848ca;
   --error-border-color: #ff4141c1;
 
+  /* 
+  MISC VARIABLES
+   */
   --box-shadow-color: #333;
-
   --input-bg-color: #555;
+  --horizontal-line-color: #999;
 
+  /* 
+  ICON VARIABLES
+   */
   --icon-bg-color: #555;
   --icon-hover-bg-color: white;
   --icon-hover-text-color: #222;
 
-  --horizontal-line-color: #999;
 
+  /* BUTTON VARIABLES */
   --button-bg-color: #417aff;
   --button-bg-hover-color: #2365ff;
   --button-shadow-hover-color: #414141;
 
+  /* COLOUR VARIABLES */
   --react-text-color: #82e0ff;
   --vite-text-color: #f8ea7b;
   --javascript-text-color: #fde423;
@@ -387,25 +404,26 @@ footer section.socials {
   grid-area: socials;
 }
 
-footer section.socials i {
+footer section.socials .social-option {
   background-color: var(--icon-bg-color);
   color: var(--primary-text-color);
 
-  width: 2rem;
+  width: fit-content;
   height: min-content;
 
   padding: 0.75rem 0.75rem;
   font-size: 2rem;
-  border-radius: 100%;
+  border-radius: 0.5rem;
 
+  /* no hover element so it can be applied on the element itself */
+  cursor: pointer;
+  
+  /* still needed for js transitions */
   transition: all ease 200ms;
 }
 
-footer section.socials i:hover {
-  background-color: var(--icon-hover-bg-color);
-  color: var(--icon-hover-text-color);
-  cursor: pointer;
-  transform: translate(0, -5px);
+footer section.socials .social-option a {
+  text-decoration: none;
 }
 
 footer section .social-container {
