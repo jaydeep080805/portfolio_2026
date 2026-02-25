@@ -209,3 +209,33 @@ for (let stack in toolsList) {
     skillBar.appendChild(skillFillAmount);
   });
 }
+
+const socialmediaOptions = document.getElementsByClassName("social-option");
+
+for (let option of socialmediaOptions) {
+  option.addEventListener("mouseover", () => {
+    console.log("hovered");
+
+    const linkVariable = option.childNodes[1];
+    const icon = linkVariable.childNodes[1];
+    const spanText = linkVariable.childNodes[3];
+
+    option.style.transform = "translate(0, -5px)";
+    option.style.backgroundColor = "var(--icon-hover-bg-color)";
+    icon.style.color = "var(--icon-hover-text-color)";
+    spanText.style.color = "var(--icon-hover-text-color)";
+  });
+
+  option.addEventListener("mouseleave", () => {
+    console.log("hovered");
+
+    const linkVariable = option.childNodes[1];
+    const icon = linkVariable.childNodes[1];
+    const spanText = linkVariable.childNodes[3];
+
+    option.style.transform = "translate(0, 0px)";
+    option.style.backgroundColor = "var(--icon-bg-color)";
+    icon.style.color = "var(--icon-text-color)";
+    spanText.style.color = "var(--icon-text-color)";
+  });
+}
