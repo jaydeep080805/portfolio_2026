@@ -83,7 +83,8 @@ const projectCardContainer = document.getElementsByClassName(
 )[0];
 
 projectInfo.map((project) => {
-  const { link, image, imageAlt, title, tools, description } = project;
+  const { link, image, imageAlt, title, tools, toolColours, description } =
+    project;
 
   const cardElement = document.createElement("article");
   cardElement.classList.add("card");
@@ -124,7 +125,7 @@ projectInfo.map((project) => {
   tools.map((t, index) => {
     const toolTextSpan = document.createElement("span");
     // toolTextSpan.classList.add(`${t.toLowerCase()}-text`);
-    toolTextSpan.style.color = `var(--${t.toLowerCase()}-text-color)`;
+    toolTextSpan.style.color = `var(--${toolColours[index]}-text-color)`;
 
     if (index + 1 == tools.length) {
       toolTextSpan.textContent = `${t}`;
