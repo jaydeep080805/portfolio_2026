@@ -214,7 +214,7 @@ const socialmediaOptions = document.getElementsByClassName("social-option");
 
 for (let option of socialmediaOptions) {
   option.addEventListener("mouseover", () => {
-    console.log("hovered");
+    // console.log("hovered");
 
     const linkVariable = option.childNodes[1];
     const icon = linkVariable.childNodes[1];
@@ -227,7 +227,7 @@ for (let option of socialmediaOptions) {
   });
 
   option.addEventListener("mouseleave", () => {
-    console.log("hovered");
+    // console.log("hovered");
 
     const linkVariable = option.childNodes[1];
     const icon = linkVariable.childNodes[1];
