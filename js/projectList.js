@@ -27,7 +27,7 @@ export const projectInfo = [
     link: "#",
     image: "./images/weather_app.png",
     imageAlt: "Screenshot of weather app front page",
-    title: "Weather app",
+    title: "Weather App",
     tools: ["JavaScript", "API", "CSS"],
     toolColours: ["javascript", "api", "css"],
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
@@ -63,12 +63,25 @@ export const projectInfo = [
   },
 
   {
-    link: "",
+    link: "https://github.com/jaydeep080805/unity-project-final",
     image: "./images/game.png",
     imageAlt: "Screenshot of game in C# game in progress",
-    title: "C# game",
+    title: "C# Game",
     tools: ["C#", "Unity", "TestRunner"],
     toolColours: ["c-sharp", "unity", "testrunner"],
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                accusamus natus minima fugiat alias maiores non blanditiis minus
+                exercitationem, nihil ducimus? Cum sequi aliquid similique.
+                `,
+  },
+
+  {
+    link: "",
+    image: "./images/python.png",
+    imageAlt: "Python logo image",
+    title: "Selenium Script",
+    tools: ["Python", "Selenium", "Scraping"],
+    toolColours: ["python", "selenium", "scraping"],
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
                 accusamus natus minima fugiat alias maiores non blanditiis minus
                 exercitationem, nihil ducimus? Cum sequi aliquid similique.
