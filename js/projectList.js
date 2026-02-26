@@ -20,7 +20,7 @@ export const projectInfo = [
   },
 
   {
-    link: "#",
+    link: "https://jaydeep080805.github.io/dew-point/",
     image: "./images/dew_point.png",
     imageAlt: "Screenshot of dew point calculator front page",
     title: "Dew Point Calculator",
@@ -30,7 +30,7 @@ export const projectInfo = [
   },
 
   {
-    link: "#",
+    link: "https://jaydeep080805.github.io/weather_app/",
     image: "./images/weather_app.png",
     imageAlt: "Screenshot of weather app front page",
     title: "Weather App",
@@ -63,7 +63,7 @@ export const projectInfo = [
   },
 
   {
-    link: "",
+    link: "https://github.com/jaydeep080805/accom_room_tracker",
     image: "./images/python.png",
     imageAlt: "Python logo image",
     title: "Selenium Script",
