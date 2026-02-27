@@ -69,6 +69,6 @@ export const projectInfo = [
     title: "Selenium Script",
     tools: ["Python", "Selenium", "Scraping"],
     toolColours: ["python", "selenium", "scraping"],
-    description: `Created a mini selenium script to check the current status of my accomodation room to track when there was an update to the amount of guests staying in the flat. utilised selenium web driver to perform mulitiple actions on the page. Cross-checked the current state of the flat with the .txt file before sending an email.`,
+    description: `Created a mini selenium script to check the current status of my accomodation room to track when there was an update to the amount of guests staying in the flat. utilised selenium web driver to perform mulitiple actions on the page. Cross-checked the current state of the flat with the .txt file before sending an email. Ran the script locally every hour through windows task scheduler.`,
   },
 ];
