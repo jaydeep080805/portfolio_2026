@@ -21,7 +21,9 @@ contactSubmitButton.addEventListener("click", async (e) => {
   const emailBody = document.getElementById("text-input");
 
   // validate the form
-  if (checkEmailValid(userEmail.value) != true) {
+  if (userName.value.length <= 0) {
+    animateToastMessage(toastMessage, "error", "Please input a name");
+  } else if (checkEmailValid(userEmail.value) != true) {
     animateToastMessage(toastMessage, "error", "Please input a valid email");
     return;
   } else if (emailSubject.value.length <= 0) {
@@ -55,6 +57,7 @@ contactSubmitButton.addEventListener("click", async (e) => {
     }
 
     const data = await res.json();
+    console.log(data);
     // console.log("Status:", res.status);
     // console.log("Success flag:", data.isSuccessful);
 
