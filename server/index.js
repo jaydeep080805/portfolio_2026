@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import nodemailer from "nodemailer";
 import "dotenv/config";
+import { sendBrevoEmail } from "./utils.js";
 
 const app = express();
 
@@ -9,27 +9,6 @@ const app = express();
 app.use(cors());
 // used to parse post req data
 app.use(express.json());
-
-// create the emailer
-const transporter = nodemailer.createTransport({
-  service: "SendinBlue",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.BREVO_EMAIL,
-    pass: process.env.BREVO_PASSWORD,
-  },
-});
-
-app.get("/", async (req, res) => {
-  return res.status(200);
-});
-
-app.post("/", async (req, res) => {
-  console.log(req.body);
-
-  return res.json(req.body);
-});
 
 app.post("/send-email", async (req, res) => {
   console.log("running");
@@ -46,26 +25,20 @@ app.post("/send-email", async (req, res) => {
     return res.status(400).json({ isSuccessful: false });
   }
 
-  const messageToMe = {
-    from: process.env.MY_EMAIL,
-    to: process.env.MY_RECEIPT_EMAIL,
-    subject: formData.emailSubject,
-    text: `${formData.emailBody}\n\nSent from: ${formData.userEmail}`,
-  };
-
-  const messageToUser = {
-    from: process.env.MY_EMAIL,
-    to: formData.userEmail,
-    subject: "Confirmation",
-    text: "Thank you for getting in contact, I will reply to your email as soon as I can.",
-  };
-
   try {
-    const emailToMyselfInfo = await transporter.sendMail(messageToMe);
-    console.log("Sent:", emailToMyselfInfo.messageId);
+    sendBrevoEmail(
+      formData.userEmail,
+      "",
+      "Confirmation",
+      "Thank you for contacting me, I will respond as soon as I can",
+    );
 
-    const emailToUserInfo = await transporter.sendMail(messageToUser);
-    console.log("Sent:", emailToUserInfo.messageId);
+    sendBrevoEmail(
+      process.env.MY_RECEIPT_EMAIL,
+      "",
+      formData.emailSubject,
+      formData.emailBody,
+    );
     return res.status(200).json({ isSuccessful: true });
   } catch (err) {
     console.error(err);
