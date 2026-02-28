@@ -14,7 +14,7 @@ export const sendBrevoEmail = async (toEmail, toName, subject, htmlContent) => {
     to: [
       {
         email: toEmail,
-        name: toName || "Test",
+        name: toName || "sender",
       },
     ],
     subject: subject,

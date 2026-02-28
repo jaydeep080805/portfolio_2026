@@ -14,6 +14,19 @@ app.post("/send-email", async (req, res) => {
   console.log("running");
   const formData = req.body;
 
+  const { userName, userEmail, emailSubject, emailBody } = formData;
+
+  // convert the users name to title case
+  let formattedUserName = "";
+  const arrayOfLetter = String(userName).split("");
+
+  let firstLetter = arrayOfLetter.shift();
+  arrayOfLetter.unshift(firstLetter.toUpperCase());
+
+  arrayOfLetter.map((l) => {
+    formattedUserName += l;
+  });
+
   try {
     for (let item in formData) {
       // if the inputs are empty
@@ -27,17 +40,17 @@ app.post("/send-email", async (req, res) => {
 
   try {
     sendBrevoEmail(
-      formData.userEmail,
-      "",
+      userEmail,
+      userName,
       "Confirmation",
-      "Thank you for contacting me, I will respond as soon as I can",
+      `<html><body><p style='font-weight: bold;'>Hello ${formattedUserName},</p>Thank you for contacting me, I will respond as soon as I can.</p></body></html>`,
     );
 
     sendBrevoEmail(
       process.env.MY_RECEIPT_EMAIL,
       "",
-      formData.emailSubject,
-      formData.emailBody,
+      emailSubject,
+      `<html><body><p>${emailBody}</p><br><br><p>Sent from: ${userEmail}</p></body></html>`,
     );
     return res.status(200).json({ isSuccessful: true });
   } catch (err) {
