@@ -50,7 +50,7 @@ app.post("/send-email", async (req, res) => {
       process.env.MY_RECEIPT_EMAIL,
       "",
       emailSubject,
-      `<html><body><p>${emailBody}</p><br><br><p>Sent from: ${userEmail}</p></body></html>`,
+      `<html><body><p>${emailBody}</p><br><br><p>Name: ${formattedUserName}\nSent from: ${userEmail}</p></body></html>`,
     );
     return res.status(200).json({ isSuccessful: true });
   } catch (err) {
