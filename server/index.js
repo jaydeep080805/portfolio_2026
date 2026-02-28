@@ -43,18 +43,37 @@ app.post("/send-email", async (req, res) => {
   }
 
   try {
-    sendBrevoEmail(
-      userEmail,
-      userName,
-      "Confirmation",
-      `<html><body><p style='font-weight: bold;'>Hello ${formattedUserName},</p>Thank you for contacting me, I will respond as soon as I can.</p></body></html>`,
-    );
+    const emailToUser = `
+    <html>
+      <body>
+        <p style='font-weight: bold;'>Hello ${formattedUserName},</p>
+        Thank you for contacting me, 
+        I will respond as soon as I can.<br><br>
+        Kind regards,<br>
+        Jay</p>
+      </body>
+    </html>
+    `;
+
+    sendBrevoEmail(userEmail, userName, "Confirmation", emailToUser);
+
+    const emailToMyself = `
+    <html>
+      <body>
+        <p>${emailBody}</p>
+        <br><br>
+        <p>Name: ${formattedUserName}<br>
+        Sent from: ${userEmail}
+        </p>
+      </body>
+    </html>
+    `;
 
     sendBrevoEmail(
       process.env.MY_RECEIPT_EMAIL,
       "",
       emailSubject,
-      `<html><body><p>${emailBody}</p><br><br><p>Name: ${formattedUserName}<br>Sent from: ${userEmail}</p></body></html>`,
+      emailToMyself,
     );
     return res.status(200).json({ isSuccessful: true });
   } catch (err) {
