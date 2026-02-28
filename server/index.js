@@ -10,6 +10,10 @@ app.use(cors());
 // used to parse post req data
 app.use(express.json());
 
+app.get("/test-route-online", (req, res) => {
+  return res.status(200).json({ status: "success" });
+});
+
 app.post("/send-email", async (req, res) => {
   console.log("running");
   const formData = req.body;
