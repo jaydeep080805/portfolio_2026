@@ -15,6 +15,7 @@ contactSubmitButton.addEventListener("click", async (e) => {
   e.preventDefault();
 
   // get the input values
+  const userName = document.getElementById("name");
   const userEmail = document.getElementById("email");
   const emailSubject = document.getElementById("subject");
   const emailBody = document.getElementById("text-input");
@@ -27,11 +28,12 @@ contactSubmitButton.addEventListener("click", async (e) => {
     animateToastMessage(toastMessage, "error", "Please put a subject");
     return;
   } else if (emailBody.value.length <= 0) {
-    animateToastMessage(toastMessage, "error", "Don't be shy");
+    animateToastMessage(toastMessage, "error", "Please put some text");
     return;
   }
 
   const payload = {
+    userName: userName.value,
     userEmail: userEmail.value,
     emailSubject: emailSubject.value,
     emailBody: emailBody.value,
@@ -63,6 +65,7 @@ contactSubmitButton.addEventListener("click", async (e) => {
     );
 
     // reset the input boxes
+    userName.value = "";
     userEmail.value = "";
     emailSubject.value = "";
     emailBody.value = "";
