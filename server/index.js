@@ -21,6 +21,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+app.get("/", async (req, res) => {
+  return res.status(200);
+});
+
+app.post("/", async (req, res) => {
+  console.log(req.body);
+
+  return res.json(req.body);
+});
+
 app.post("/send-email", async (req, res) => {
   console.log("running");
   const formData = req.body;
