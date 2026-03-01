@@ -564,7 +564,7 @@ footer section.horizontal-line {
     justify-content: center;
     gap: 4rem;
 
-    padding: 2rem 0;
+    padding: 4rem 0 2rem 0;
   }
 
   footer * {
