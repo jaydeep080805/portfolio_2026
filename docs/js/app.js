@@ -191,13 +191,13 @@ for (let stack in toolsList) {
 
     // add an icon to the start of each skill
     const skillIcon = document.createElement("img");
+    skillIcon.classList.add("skill-icon");
     skillIcon.src = icon;
-    skillIcon.style.width = "1rem";
 
     // add the name for each skill
     const skillName = document.createElement("span");
+    skillName.classList.add("skill-name");
     skillName.textContent = ` ${name} - `;
-    skillName.style.fontWeight = "bold";
 
     // add icon to the wrapper
     skillWrapper.appendChild(skillIcon);

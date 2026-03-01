@@ -13,11 +13,22 @@
   */
   --card-bg-color: #222;
   --card-subtle-text-color: #ccc;
-
+  --project-card-box-shadow-color: #333;
+  --project-container-spacing: 4rem;
+  
   /* 
   SKILL CARD
   */
   --skill-card-bg-color: var(--primary-bg-color);
+  --skill-card-box-shadow-color: #444;
+  --skill-card-horizontal-line-color: #999;
+  --skill-container-spacing: 4rem;
+
+  /* 
+  CARD SETTINGS
+  */
+  --card-border-radius: 0.5rem;
+
 
   /* 
   TOAST VARIABLES
@@ -33,7 +44,6 @@
   /* 
   MISC VARIABLES
    */
-  --box-shadow-color: #333;
   --input-bg-color: #555;
   --horizontal-line-color: #999;
 
@@ -77,6 +87,8 @@
   --working--bar-fill: 50%;
   --comfortable--bar-fill: 75%;
   --proficient--bar-fill: 100%;
+
+  --selection-color: orange;
 }
 
 * {
@@ -89,7 +101,7 @@
 
 /* change the highlight colour */
 *::selection {
-  background-color: orange;
+  background-color: var(--selection-color);
 }
 
 /* creates the animation for the home section */
@@ -134,7 +146,7 @@
 
   padding: 1rem;
   font-size: 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--card-border-radius);
 
   /* start it off the screen */
   transform: translate(0, -200px);
@@ -183,7 +195,7 @@ nav {
 .typing-animation-container h2 {
   overflow: hidden;
   white-space: nowrap;
-  border-right: orange solid 2px;
+  border-right: var(--selection-color) solid 2px;
   font-family: monospace;
 
   animation:
@@ -207,7 +219,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4rem;
+  gap: var(--project-container-spacing);
 }
 
 .project-card-image-container img {
@@ -226,9 +238,9 @@ nav {
   width: 30rem;
   background-color: var(--card-bg-color);
   padding: 2rem;
-  border-radius: 0.5rem;
+  border-radius: var(--card-border-radius);
 
-  box-shadow: 0.5rem 0.5rem var(--box-shadow-color);
+  box-shadow: 0.5rem 0.5rem var(--project-card-box-shadow-color);
 
   transition:
     transform ease 200ms,
@@ -237,7 +249,7 @@ nav {
 
 .card:hover {
   transform: translate(0, -10px);
-  box-shadow: 1.25rem 1.25rem var(--box-shadow-color);
+  box-shadow: 1.25rem 1.25rem var(--project-card-box-shadow-color);
 }
 
 /* select all children of the project-info class */
@@ -311,12 +323,12 @@ nav {
 .skills-section .skill-card-container {
   display: grid;
   grid-template-columns: repeat(3, 20rem);
-  gap: 5rem;
+  gap: var(--skill-container-spacing);
 }
 
 .skills-section .stack-card {
   background-color: var(--skill-card-bg-color);
-  border-radius: 0.5rem;
+  border-radius: var(--card-border-radius);
   min-height: fit-content;
 
   padding: 2rem 1rem;
@@ -330,17 +342,31 @@ nav {
   transform: translate(0, -10px);
 }
 
-.skill-wrapper {
-  padding: 0.5rem 0;
-}
-
 .skills-section .stack-card > h3 {
-  border-bottom: 2px dotted #999;
+  border-bottom: 2px dotted var(--skill-card-horizontal-line-color);
   max-width: 50%;
   margin: 0 auto;
   
   margin-bottom: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.skill-wrapper {
+  padding: 0.5rem 0;
+}
+
+.skills-section .skill-icon {
+  width: 1rem;
+  transition: transform 200ms ease;
+}
+
+.skills-section .skill-icon:hover {
+  transform: scale(1.2);
+}
+
+.skills-section .skill-name {
+  font-weight: bold;
+  cursor: default;
 }
 
 /* default dot styling */
@@ -430,7 +456,7 @@ footer section.socials .social-option {
 
   padding: 0.75rem 0.75rem;
   font-size: 2rem;
-  border-radius: 0.5rem;
+  border-radius: var(--card-border-radius);
   margin-bottom: 5.5rem;
 
   align-self: flex-end;
@@ -511,11 +537,6 @@ footer section.horizontal-line {
   .skills-section .skill-card-container {
     grid-template-columns: 20rem;
   }
-
-  /* .skills-section .skill-bar-container {
-    flex-direction: column;
-    align-items: center;
-  } */
 
   #projects {
     min-height: fit-content;
