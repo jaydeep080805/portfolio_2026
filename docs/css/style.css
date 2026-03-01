@@ -1,5 +1,4 @@
 :root {
-
   /* 
   PRIMARY VARIABLES
   */
@@ -14,6 +13,11 @@
   */
   --card-bg-color: #222;
   --card-subtle-text-color: #ccc;
+
+  /* 
+  SKILL CARD
+  */
+  --skill-card-bg-color: var(--primary-bg-color);
 
   /* 
   TOAST VARIABLES
@@ -40,7 +44,6 @@
   --icon-hover-bg-color: white;
   --icon-hover-text-color: #222;
 
-
   /* BUTTON VARIABLES */
   --button-bg-color: #417aff;
   --button-bg-hover-color: #2365ff;
@@ -57,18 +60,23 @@
   --html-text-color: #ff9557;
   --docker-text-color: #354dff;
   --tailwind-text-color: #99ccff;
-  --git-text-color: #ffffff;
+  --git-text-color: #ff8c00;
   --sql-text-color: #3053ff;
   --python-text-color: #76ff7f;
   --express-text-color: #ff5c5c;
-  --jest-text-color: #FFA500;
+  --jest-text-color: #ffa500;
   --supertest-text-color: #03c03c;
-  --flask-text-color: #cfff8d  ;
+  --flask-text-color: #cfff8d;
   --c-sharp-text-color: #cc74ff;
   --unity-text-color: #ffffff;
   --testrunner-text-color: #74ff58;
   --selenium-text-color: #0fff8b;
   --scraping-text-color: #ff9558;
+
+  --learning--bar-fill: 25%;
+  --working--bar-fill: 50%;
+  --comfortable--bar-fill: 75%;
+  --proficient--bar-fill: 100%;
 }
 
 * {
@@ -278,6 +286,14 @@ nav {
   min-width: 60%;
 }
 
+#about h2 {
+  font-size: 2rem;
+}
+
+#about p {
+  font-size: 1.25rem;
+}
+
 #about .about-section h2 {
   margin-bottom: 2rem;
 }
@@ -288,62 +304,63 @@ nav {
   max-width: 80%;
 }
 
-/* keep the skills section away from edges dynamically */
-.skills-section {
-  max-width: 50%;
-}
-
 .skills-section > h2 {
   margin-bottom: 2rem;
 }
 
-.skills-section .skill-bar-container {
-  display: flex;
-  flex-direction: column;
+.skills-section .skill-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 20rem);
   gap: 5rem;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.stack-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.stack-container .stack-content {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.blank {
-  position: relative;
-  width: 15rem;
-  height: 1.25rem;
-
-  border: 1px solid #ccc;
+.skills-section .stack-card {
+  background-color: var(--skill-card-bg-color);
   border-radius: 0.5rem;
+  min-height: fit-content;
+
+  padding: 2rem 1rem;
+  box-shadow: 0.5rem 0.5rem #222;
+  
+  transition: all ease 200ms;
 }
 
-.colour {
-  position: absolute;
-  height: 1.25rem;
-
-  border-radius: 0.5rem 0 0 0.5rem;
-
-  top: 0;
-  left: 0;
+.skills-section .stack-card:hover {
+  box-shadow: 1rem 1rem #222;
+  transform: translate(0, -10px);
 }
 
-#about h2 {
-  font-size: 2rem;
+.skill-wrapper {
+  padding: 0.5rem 0;
 }
 
-#about p {
-  font-size: 1.25rem;
+.skills-section .stack-card > h3 {
+  border-bottom: 2px dotted #999;
+  max-width: 50%;
+  margin: 0 auto;
+  
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
 }
+
+/* default dot styling */
+.dot {
+  display: inline-block;
+
+  margin-right: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1.5px solid white;
+  border-radius: 100%;
+}
+
+.filled-dot {
+  background-color: white;
+
+  /* transition applied in js */
+  transition: all 500ms ease;
+}
+
 
 footer {
   height: 40rem;
@@ -420,7 +437,7 @@ footer section.socials .social-option {
 
   /* no hover element so it can be applied on the element itself */
   cursor: pointer;
-  
+
   /* still needed for js transitions */
   transition: all ease 200ms;
 }
@@ -491,10 +508,14 @@ footer section.horizontal-line {
     max-width: 100%;
   }
 
-  .skills-section .skill-bar-container {
+  .skills-section .skill-card-container {
+    grid-template-columns: 20rem;
+  }
+
+  /* .skills-section .skill-bar-container {
     flex-direction: column;
     align-items: center;
-  }
+  } */
 
   #projects {
     min-height: fit-content;

@@ -163,56 +163,75 @@ projectInfo.map((project) => {
 ======== ADDING SKILLS TO DOM ======== 
 =====================================================
 */
-const skillBarContainer = document.getElementsByClassName(
-  "skill-bar-container",
+const skillCardContainer = document.getElementsByClassName(
+  "skill-card-container",
 )[0];
 
 for (let stack in toolsList) {
-  // create the seperate containers and add it the skill bar container
-  // this will be used so that the heading and bars can be in a flex col
-  const stackContainer = document.createElement("section");
-  stackContainer.classList.add("stack-container");
-  skillBarContainer.appendChild(stackContainer);
+  // contains the information within the cards
+  const stackCard = document.createElement("div");
+  stackCard.classList.add("stack-card");
 
-  // create and add the headings to the stack container within the skill bar container
-  const heading = document.createElement("h2");
-  heading.textContent = stack;
-  stackContainer.appendChild(heading);
+  // sets the heading for each card
+  const stackCardHeading = document.createElement("h3");
+  stackCardHeading.textContent = stack;
 
-  // create a stack content which contains the actual bars
-  // this allows flex to work in a col with the heading in the container
-  const stackContent = document.createElement("div");
-  stackContent.classList.add("stack-content");
-  stackContainer.appendChild(stackContent);
+  // add the card heading to the card
+  stackCard.appendChild(stackCardHeading);
+  // add the card to the grid container
+  skillCardContainer.appendChild(stackCard);
 
-  toolsList[stack].map((tool) => {
-    const { name, fillAmount } = tool;
+  // loop through the skills
+  toolsList[stack].map((s) => {
+    const { name, fillAmount, skillLevel, icon } = s;
 
-    // creates the container for both the skill text and the bar
-    const skillContainer = document.createElement("div");
-    skillContainer.classList.add("skill");
-    stackContent.appendChild(skillContainer);
+    // create a wrapper for each skill
+    const skillWrapper = document.createElement("div");
+    skillWrapper.classList.add("skill-wrapper");
 
-    // create the name span element for the skill
-    const skillNameElement = document.createElement("p");
-    skillNameElement.style.fontWeight = "bold";
-    skillNameElement.style.marginBottom = "0.25rem";
-    skillNameElement.style.fontFamily = "monospace";
-    skillNameElement.textContent = name;
-    skillContainer.appendChild(skillNameElement);
+    // add an icon to the start of each skill
+    const skillIcon = document.createElement("img");
+    skillIcon.src = icon;
+    skillIcon.style.width = "1rem";
 
-    // creates the empty bar
-    const skillBar = document.createElement("div");
-    skillBar.classList.add("blank");
-    skillContainer.appendChild(skillBar);
+    // add the name for each skill
+    const skillName = document.createElement("span");
+    skillName.textContent = ` ${name} - `;
+    skillName.style.fontWeight = "bold";
 
-    // adds the colour dynamically to the bar
-    // adds both the colour and the sizing
-    const skillFillAmount = document.createElement("div");
-    skillFillAmount.classList.add("colour");
-    skillFillAmount.style.backgroundColor = `var(--${name.toLowerCase()}-text-color)`;
-    skillFillAmount.style.width = `${fillAmount}%`;
-    skillBar.appendChild(skillFillAmount);
+    // add icon to the wrapper
+    skillWrapper.appendChild(skillIcon);
+    // add the name to the wrapper
+    skillWrapper.appendChild(skillName);
+
+    for (let i = 0; i < 5; i++) {
+      // create a .dot class
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+
+      // check how many dots should be filled
+      if (i < fillAmount) {
+        // set the class to be filled
+        dot.classList.add("filled-dot");
+
+        // add the hover events
+        dot.addEventListener("mouseover", () => {
+          dot.style.backgroundColor = `var(--${name.toLowerCase()}-text-color)`;
+        });
+
+        dot.addEventListener("mouseleave", () => {
+          setTimeout(() => {
+            dot.style.backgroundColor = "white";
+          }, 2000);
+        });
+      }
+
+      // add the dots to the end of the wrapper
+      skillWrapper.appendChild(dot);
+    }
+
+    // add the wrapper to the card
+    stackCard.appendChild(skillWrapper);
   });
 }
 
