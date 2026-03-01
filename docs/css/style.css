@@ -197,7 +197,6 @@ nav {
   overflow: hidden;
   white-space: nowrap;
   border-right: var(--selection-color) solid 2px;
-  font-family: monospace;
 
   animation:
     typing 3s steps(40),
