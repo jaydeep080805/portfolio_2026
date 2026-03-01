@@ -18,18 +18,7 @@ app.post("/send-email", async (req, res) => {
   console.log("running");
   const formData = req.body;
 
-  const { userName, userEmail, emailSubject, emailBody } = formData;
-
-  // convert the users name to title case
-  let formattedUserName = "";
-  const arrayOfLetter = String(userName).split("");
-
-  let firstLetter = arrayOfLetter.shift();
-  arrayOfLetter.unshift(firstLetter.toUpperCase());
-
-  arrayOfLetter.map((l) => {
-    formattedUserName += l;
-  });
+  let { userName, userEmail, emailSubject, emailBody } = formData;
 
   try {
     for (let item in formData) {
@@ -38,47 +27,71 @@ app.post("/send-email", async (req, res) => {
         throw new Error("Input shouldn't be empty");
       }
     }
+
+    // convert the users name to title case
+    let formattedUserName = "";
+    const arrayOfLetter = String(userName).split("");
+
+    let firstLetter = arrayOfLetter.shift();
+    arrayOfLetter.unshift(firstLetter.toUpperCase());
+
+    arrayOfLetter.map((l) => {
+      formattedUserName += l;
+    });
+
+    // nest the try block to maintain the variable scope
+    // if this is outside the parent try block it will not have access to the variables
+    try {
+      const emailToUser = `
+        <html>
+          <body>
+            <p style='font-weight: bold;'>Hello ${formattedUserName},</p>
+            Thank you for contacting me, 
+            I will respond as soon as I can.<br><br>
+            Kind regards,<br>
+            Jay</p>
+          </body>
+        </html>
+      `;
+
+      await sendBrevoEmail(userEmail, userName, "Confirmation", emailToUser);
+
+      const emailToMyself = `
+        <html>
+          <body>
+            <p>${emailBody}</p>
+            <br><br>
+            <p>Name: ${formattedUserName}<br>
+            Sent from: ${userEmail}
+            </p>
+          </body>
+        </html>
+        `;
+
+      await sendBrevoEmail(
+        process.env.MY_RECEIPT_EMAIL,
+        "",
+        emailSubject,
+        emailToMyself,
+      );
+      return res.status(200).json({ isSuccessful: true });
+    } catch (err) {
+      // catch the errors for sending emails
+      console.error(`thrown when sending the emails: ${err}`);
+      return res.status(400).json({ isSuccessful: false });
+    }
   } catch (err) {
-    return res.status(400).json({ isSuccessful: false });
+    // catch the errors for setting the variables
+    console.log(`thrown during initialisation/formatting of data: ${err}`);
+    return res.status(500).json({ isSuccessful: false });
   }
+});
 
+app.get("/test-send-email", async (req, res) => {
   try {
-    const emailToUser = `
-    <html>
-      <body>
-        <p style='font-weight: bold;'>Hello ${formattedUserName},</p>
-        Thank you for contacting me, 
-        I will respond as soon as I can.<br><br>
-        Kind regards,<br>
-        Jay</p>
-      </body>
-    </html>
-    `;
-
-    sendBrevoEmail(userEmail, userName, "Confirmation", emailToUser);
-
-    const emailToMyself = `
-    <html>
-      <body>
-        <p>${emailBody}</p>
-        <br><br>
-        <p>Name: ${formattedUserName}<br>
-        Sent from: ${userEmail}
-        </p>
-      </body>
-    </html>
-    `;
-
-    sendBrevoEmail(
-      process.env.MY_RECEIPT_EMAIL,
-      "",
-      emailSubject,
-      emailToMyself,
-    );
-    return res.status(200).json({ isSuccessful: true });
+    await sendBrevoEmail("", "", "", "");
   } catch (err) {
-    console.error(err);
-    return res.status(400).json({ isSuccessful: false });
+    return res.status(500).json(err);
   }
 });
 

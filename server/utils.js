@@ -35,16 +35,22 @@ export const sendBrevoEmail = async (toEmail, toName, subject, htmlContent) => {
     // handle the brevo error
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(
-        `Brevo error: ${response.status} - ${JSON.stringify(errorData)}`,
-      );
+
+      // create the error message
+      const errorMessage = new Error("Brevo req failed");
+
+      // add the object keys to the Error object
+      errorMessage.status = response.status;
+      errorMessage.code = errorData.code;
+
+      throw errorMessage;
     }
 
     const data = await response.json();
     console.log("Email sent! Message ID:", data.messageId);
     return data;
   } catch (err) {
-    console.error("Failed to send email:", err);
+    console.error(`Failed to send email: ${err}`);
     throw err;
   }
 };
