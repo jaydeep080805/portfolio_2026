@@ -23,6 +23,7 @@ contactSubmitButton.addEventListener("click", async (e) => {
   // validate the form
   if (userName.value.length <= 0) {
     animateToastMessage(toastMessage, "error", "Please input a name");
+    return;
   } else if (checkEmailValid(userEmail.value) != true) {
     animateToastMessage(toastMessage, "error", "Please input a valid email");
     return;
@@ -53,7 +54,12 @@ contactSubmitButton.addEventListener("click", async (e) => {
     // checks the status code of the response
     if (!res.ok) {
       console.log(`Request failed with status: ${res.status}`);
-      throw new Error();
+
+      if (res.status == 500) {
+        throw new Error("Please fill out the form");
+      } else {
+        throw new Error(`${res.status} - ${res.body}`);
+      }
     }
 
     const data = await res.json();
