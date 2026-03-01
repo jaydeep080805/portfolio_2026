@@ -183,7 +183,7 @@ for (let stack in toolsList) {
 
   // loop through the skills
   toolsList[stack].map((s) => {
-    const { name, fillAmount, skillLevel, icon } = s;
+    const { name, fillAmount, colorName, skillLevel, icon } = s;
 
     // create a wrapper for each skill
     const skillWrapper = document.createElement("div");
@@ -216,7 +216,7 @@ for (let stack in toolsList) {
 
         // add the hover events
         dot.addEventListener("mouseover", () => {
-          dot.style.backgroundColor = `var(--${name.toLowerCase()}-text-color)`;
+          dot.style.backgroundColor = `var(--${colorName}-text-color)`;
         });
 
         dot.addEventListener("mouseleave", () => {
