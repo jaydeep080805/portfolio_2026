@@ -70,8 +70,9 @@
   --html-text-color: #ff9557;
   --docker-text-color: #354dff;
   --tailwind-text-color: #99ccff;
-  --git-text-color: #ff8c00;
-  --sql-text-color: #3053ff;
+  --git-text-color: #ff4400;
+  --sql-text-color: #36d0ff;
+  --postgres-text-color: #4083ff;
   --python-text-color: #76ff7f;
   --express-text-color: #ff5c5c;
   --jest-text-color: #ffa500;
@@ -82,6 +83,13 @@
   --testrunner-text-color: #74ff58;
   --selenium-text-color: #0fff8b;
   --scraping-text-color: #ff9558;
+  --flask-text-color: #9f9f9f;
+  --c-text-color: #5b95ff;
+  --cpp-text-color: #5b95ff;
+  --php-text-color: #bd5bff;
+  --supabase-text-color: #5bff74;
+  --postman-text-color: #f6af2b;
+  --jest-text-color: #8c3333;
 
   --learning--bar-fill: 25%;
   --working--bar-fill: 50%;
@@ -322,7 +330,7 @@ nav {
 
 .skills-section .skill-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 20rem);
+  grid-template-columns: repeat(4, 20rem);
   gap: var(--skill-container-spacing);
 }
 
@@ -514,11 +522,6 @@ footer section.horizontal-line {
     animation: none;
     border: none;
     margin: 0 1rem;
-  }
-
-  .section {
-    min-height: 50rem;
-    height: fit-content;
   }
 
   #about {

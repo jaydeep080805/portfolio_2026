@@ -1,5 +1,5 @@
 export const toolsList = {
-  "Front-End": [
+  Web: [
     {
       name: "JavaScript",
       colorName: "javascript",
@@ -7,6 +7,7 @@ export const toolsList = {
       skillLevel: "learning",
       icon: "./images/icons/js.png",
     },
+
     {
       name: "React",
       colorName: "react",
@@ -14,6 +15,7 @@ export const toolsList = {
       skillLevel: "learning",
       icon: "./images/icons/react.png",
     },
+
     {
       name: "HTML",
       colorName: "html",
@@ -21,6 +23,7 @@ export const toolsList = {
       skillLevel: "learning",
       icon: "./images/icons/html.png",
     },
+
     {
       name: "CSS",
       colorName: "css",
@@ -28,6 +31,7 @@ export const toolsList = {
       skillLevel: "learning",
       icon: "./images/icons/css.png",
     },
+
     {
       name: "Tailwind",
       colorName: "tailwind",
@@ -35,16 +39,17 @@ export const toolsList = {
       skillLevel: "learning",
       icon: "./images/icons/tailwind.png",
     },
+
+    // {
+    //   name: "PHP",
+    //   colorName: "php",
+    //   fillAmount: 2,
+    //   skillLevel: "learning",
+    //   icon: "./images/icons/php.svg",
+    // },
   ],
 
-  "Back-End": [
-    {
-      name: "Node",
-      colorName: "node",
-      fillAmount: 3,
-      skillLevel: "learning",
-      icon: "./images/icons/node.webp",
-    },
+  Software: [
     {
       name: "Python",
       colorName: "python",
@@ -52,19 +57,71 @@ export const toolsList = {
       skillLevel: "learning",
       icon: "./images/icons/python.png",
     },
-    {
-      name: "SQL",
-      colorName: "sql",
-      fillAmount: 3,
-      skillLevel: "learning",
-      icon: "./images/icons/sql.svg",
-    },
+
     {
       name: "C#",
       colorName: "c-sharp",
       fillAmount: 3,
       skillLevel: "learning",
       icon: "./images/icons/c-sharp.png",
+    },
+
+    {
+      name: "C",
+      colorName: "c",
+      fillAmount: 3,
+      skillLevel: "learning",
+      icon: "./images/icons/c.png",
+    },
+
+    {
+      name: "Node",
+      colorName: "node",
+      fillAmount: 3,
+      skillLevel: "learning",
+      icon: "./images/icons/node.webp",
+    },
+
+    {
+      name: "Flask",
+      colorName: "flask",
+      fillAmount: 4,
+      skillLevel: "learning",
+      icon: "./images/icons/flask.webp",
+    },
+
+    // {
+    //   name: "C++",
+    //   colorName: "cpp",
+    //   fillAmount: 3,
+    //   skillLevel: "learning",
+    //   icon: "./images/icons/c++.png",
+    // },
+  ],
+
+  Database: [
+    {
+      name: "SQL",
+      colorName: "sql",
+      fillAmount: 4,
+      skillLevel: "learning",
+      icon: "./images/icons/sql.svg",
+    },
+
+    {
+      name: "PostgreSQL",
+      colorName: "postgres",
+      fillAmount: 4,
+      skillLevel: "learning",
+      icon: "./images/icons/postgres.png",
+    },
+
+    {
+      name: "Supabase",
+      colorName: "supabase",
+      fillAmount: 4,
+      skillLevel: "learning",
+      icon: "./images/icons/supabase.png",
     },
   ],
 
@@ -76,12 +133,29 @@ export const toolsList = {
       skillLevel: "learning",
       icon: "./images/icons/docker.png",
     },
+
     {
       name: "Git",
       colorName: "git",
       fillAmount: 4,
       skillLevel: "learning",
       icon: "./images/icons/git.svg",
+    },
+
+    {
+      name: "Postman",
+      colorName: "postman",
+      fillAmount: 4,
+      skillLevel: "learning",
+      icon: "./images/icons/postman.svg",
+    },
+
+    {
+      name: "Jest",
+      colorName: "jest",
+      fillAmount: 3,
+      skillLevel: "learning",
+      icon: "./images/icons/jest.svg",
     },
   ],
 };
