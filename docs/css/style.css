@@ -230,8 +230,10 @@ nav {
 
 .project-card-image-container img {
   width: 30rem;
-  max-height: 20rem;
-  object-fit: contain;
+  height: 20rem;
+  max-height: fit-content;
+
+  object-fit: cover;
 
   transition: filter ease 200ms;
 }
@@ -264,8 +266,14 @@ nav {
   display: block;
 }
 
-.card div.project-info > h4 {
-  font-size: 1.5rem;
+.card div.project-info .heading-container {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.card div.project-info .heading-container .link-container {
+  
 }
 
 .card div.project-info > span {
@@ -554,6 +562,10 @@ footer section.horizontal-line {
 
   .project-card-image-container img {
     max-width: 70vw;
+    min-height: 10rem;
+    max-height: 15rem;
+    object-fit: contain;
+
     transition: filter ease 200ms;
   }
 

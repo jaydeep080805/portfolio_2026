@@ -6,7 +6,7 @@ export const projectInfo = [
     title: "Sikh Essence",
     tools: ["React", "Vite", "Tailwind", "node"],
     toolColours: ["react", "vite", "tailwind", "node"],
-    description: `Engineered a full-stack application utilising React for component based reusability, Vite for quick render speeds, and tailwind for consistent design. Focused on creating a consistent design across multiple devices. Created a backend to accept emails and provide both a way for me to access the emails, aswell as providing the user with a confirmation email.`,
+    description: `Full-stack React application providing Sikh resources including prayers, calendar events, and educational content. Built with a responsive UI using Tailwind and a Node backend handling email submissions and confirmation messages.`,
   },
 
   {
@@ -16,7 +16,7 @@ export const projectInfo = [
     title: "Todoey",
     tools: ["Flask", "JavaScript", "CSS", "SQL"],
     toolColours: ["flask", "javascript", "css", "sql"],
-    description: `Created an online to do list application using Flask, integrating CRUD operations on a database. Gained real world use of table relationships, authentication, themes, user profiles and hashing/salting passwords. Also used jinja for dynamic HTML rendering and SQLAlchemy for ORM management, allowing for greater control over tables.`,
+    description: `Full-stack to-do list application built with Flask and SQLAlchemy. Implements CRUD operations with user authentication, password hashing, and database relationships. Uses Jinja for dynamic HTML rendering and supports themed UI customization.`,
   },
 
   {
@@ -26,7 +26,7 @@ export const projectInfo = [
     title: "Dew Point Calculator",
     tools: ["React", "JavaScript", "JSX"],
     toolColours: ["react", "javascript", "jsx"],
-    description: `Created a React app to calculate the dew point provided with a temperature and relative humidity value. This projected helped me to quickly work out an approximate dew point for my rooms when trying to workout the humidity.`,
+    description: `Interactive React tool for calculating dew point using temperature and humidity inputs. Designed with a simple UI to provide quick environmental calculations.`,
   },
 
   {
@@ -36,7 +36,7 @@ export const projectInfo = [
     title: "Weather App",
     tools: ["JavaScript", "API", "CSS"],
     toolColours: ["javascript", "api", "css"],
-    description: `Leveraged API's to create an online weather dashboard. The colours are dynamically updated to provdide the user with a quick overview of the current temperatures of an area of their choosing, provided through openweathermap.
+    description: `Weather dashboard that retrieves live data using the OpenWeatherMap API. Displays temperature, weather conditions, and location data for user-selected cities with dynamically styled UI elements.
                 `,
   },
 
@@ -47,7 +47,7 @@ export const projectInfo = [
     title: "Porfolio (this site)",
     tools: ["JavaScript", "Express", "Jest", "Supertest", "API"],
     toolColours: ["javascript", "express", "jest", "supertest", "api"],
-    description: `Created a portfolio app utilising DRY code practices, test-driven code and responsive layout. The site features dynamic data rendering from JavaScript ensuring code remains maintainable and readable. Developed an Express.js backend to connect to Brevo API and SMTP servers to ensure reliable email delivery. Securely stored API keys in .env files to maintain security.   
+    description: `Personal developer portfolio built with JavaScript and Express. Designed with a responsive layout and modular structure following DRY principles. Includes automated tests using Jest and Supertest and integrates backend email functionality.   
                 `,
   },
 
@@ -58,7 +58,7 @@ export const projectInfo = [
     title: "C# Game",
     tools: ["C#", "Unity", "TestRunner"],
     toolColours: ["c-sharp", "unity", "testrunner"],
-    description: `Created a mini game in Unity consisting of multiple levels, multiple input options, saved user preferences through I/O operations, and a score based system for progression. Created multiple canvases utilising prefabs to create a maintainable and consistent user experience.
+    description: `Unity game built in C# featuring multiple levels, player input handling, and a scoring system. Implements prefabs for reusable UI components and saves user preferences through file I/O operations.
                 `,
   },
 
@@ -69,6 +69,6 @@ export const projectInfo = [
     title: "Selenium Script",
     tools: ["Python", "Selenium", "Scraping"],
     toolColours: ["python", "selenium", "scraping"],
-    description: `Created a mini selenium script to check the current status of my accomodation room to track when there was an update to the amount of guests staying in the flat. utilised selenium web driver to perform mulitiple actions on the page. Cross-checked the current state of the flat with the .txt file before sending an email. Ran the script locally every hour through windows task scheduler.`,
+    description: `Python automation script using Selenium WebDriver to monitor updates to accommodation occupancy. The script checks the page state, compares it with stored data, and sends an email alert if a change is detected. Runs hourly via Windows Task Scheduler.`,
   },
 ];
