@@ -117,6 +117,14 @@ export const toolsList = {
     },
 
     {
+      name: "MySQL",
+      colorName: "mysql",
+      fillAmount: 4,
+      skillLevel: "learning",
+      icon: "./images/icons/mysql.png",
+    },
+
+    {
       name: "Supabase",
       colorName: "supabase",
       fillAmount: 4,
@@ -131,7 +139,7 @@ export const toolsList = {
       colorName: "docker",
       fillAmount: 3,
       skillLevel: "learning",
-      icon: "./images/icons/docker.png",
+      icon: "./images/icons/docker.avif",
     },
 
     {

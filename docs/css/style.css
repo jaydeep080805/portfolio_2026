@@ -88,6 +88,7 @@
   --supabase-text-color: #5bff74;
   --postman-text-color: #f6af2b;
   --jest-text-color: #8c3333;
+  --mysql-text-color: #4de9f1;
 
   --learning--bar-fill: 25%;
   --working--bar-fill: 50%;
@@ -337,6 +338,7 @@ nav {
 .skills-section .skill-card-container {
   display: grid;
   grid-template-columns: repeat(4, 20rem);
+  /* grid-template-rows: auto; */
   gap: var(--skill-container-spacing);
 }
 
@@ -467,13 +469,15 @@ footer section.socials .social-option {
 
   width: fit-content;
   height: min-content;
+  text-wrap: nowrap;
 
   padding: 0.75rem 0.75rem;
   font-size: 2rem;
   border-radius: var(--card-border-radius);
-  margin-bottom: 5.5rem;
-
-  align-self: flex-end;
+  
+  /* align-self: flex-end; */
+  margin-top: auto;
+  margin-bottom: 3rem;
 
   /* no hover element so it can be applied on the element itself */
   cursor: pointer;
@@ -490,7 +494,8 @@ footer section .social-container {
   display: flex;
   justify-content: start;
   align-items: center;
-
+  
+  font-weight: 300;
   margin-left: 5rem;
   height: 100%;
   gap: 1rem;
