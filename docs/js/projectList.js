@@ -71,4 +71,14 @@ export const projectInfo = [
     toolColours: ["python", "selenium", "scraping"],
     description: `Python automation script using Selenium WebDriver to monitor updates to accommodation occupancy. The script checks the page state, compares it with stored data, and sends an email alert if a change is detected. Runs hourly via Windows Task Scheduler.`,
   },
+
+  {
+    link: "https://github.com/jaydeep080805/photo_batch_convert",
+    image: "./images/python.png",
+    imageAlt: "Python logo image",
+    title: "Photo Batch Convert",
+    tools: ["Python", "Pillow", "OS"],
+    toolColours: ["python", "pillow", "os"],
+    description: `Python automation script used to batch convert all files in a folder containing the extension .heif into .jpg. It can be easily altered to accomodate any extension`,
+  },
 ];
