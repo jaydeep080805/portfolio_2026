@@ -12,12 +12,28 @@ import { mobileMenuAnimation } from "./animations.js";
 =====================================================
 */
 
+// const navbar = document.getElementsByTagName("nav")[0];
 const mobileNavIcon = document.getElementsByClassName("fa-bars")[0];
+const mobileNavMenu = document.getElementsByClassName("navbar-list")[0];
 let mobileMenuIsOpen = false;
+
 mobileNavIcon.addEventListener("click", () => {
   mobileMenuAnimation(mobileNavIcon, mobileMenuIsOpen);
   mobileMenuIsOpen = !mobileMenuIsOpen;
 });
+
+// remove the bars on desktop
+// document.addEventListener("DOMContentLoaded", () => {
+//   let details = navigator.userAgent;
+//   let regexp = /android|iphone|kindle|ipad/i;
+
+//   if (!regexp.test(details)) {
+//     mobileNavIcon.style.display = "none";
+
+//     mobileNavMenu.classList.add("navbar-list-desktop");
+//     mobileNavMenu.classList.remove("hidden");
+//   }
+// });
 
 /* 
 =====================================================

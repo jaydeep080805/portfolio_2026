@@ -1,108 +1,13 @@
-:root {
-  /* 
-  PRIMARY VARIABLES
-  */
-  --primary-text-color: white;
-  --primary-text-hover-color: #aaa;
-
-  --primary-bg-color: #444;
-  --alternate-section-color: #333;
-
-  /* 
-  PROJECT CARD VARIABLES
-  */
-  --card-bg-color: #222;
-  --card-subtle-text-color: #ccc;
-  --project-card-box-shadow-color: #333;
-  --project-container-spacing: 4rem;
-
-  /* 
-  SKILL CARD
-  */
-  --skill-card-bg-color: var(--primary-bg-color);
-  --skill-card-box-shadow-color: #444;
-  --skill-card-horizontal-line-color: #999;
-  --skill-container-spacing: 4rem;
-
-  /* 
-  CARD SETTINGS
-  */
-  --card-border-radius: 0.5rem;
-
-  /* 
-  TOAST VARIABLES
-   */
-  /* --success-bg-color: #48f55fcc;
-  --success-border-color: #51ff41c1; */
-  --success-bg-color: #89cff0d6;
-  --success-border-color: #89cff0;
-
-  --error-bg-color: #f54848ca;
-  --error-border-color: #ff4141c1;
-
-  /* 
-  MISC VARIABLES
-   */
-  --input-bg-color: #555;
-  --horizontal-line-color: #999;
-
-  /* 
-  ICON VARIABLES
-   */
-  --icon-bg-color: #555;
-  --icon-hover-bg-color: white;
-  --icon-hover-text-color: #222;
-
-  /* BUTTON VARIABLES */
-  --button-bg-color: #417aff;
-  --button-bg-hover-color: #2365ff;
-  --button-shadow-hover-color: #414141;
-
-  /* COLOUR VARIABLES */
-  --react-text-color: #82e0ff;
-  --vite-text-color: #f8ea7b;
-  --javascript-text-color: #fde423;
-  --node-text-color: #a4fba4;
-  --jsx-text-color: #8585fe;
-  --css-text-color: #5192fc;
-  --api-text-color: #d87cff;
-  --html-text-color: #ff9557;
-  --docker-text-color: #354dff;
-  --tailwind-text-color: #99ccff;
-  --git-text-color: #ff4400;
-  --sql-text-color: #36d0ff;
-  --postgres-text-color: #4083ff;
-  --python-text-color: #76ff7f;
-  --express-text-color: #ff5c5c;
-  --supertest-text-color: #03c03c;
-  --flask-text-color: #cfff8d;
-  --c-sharp-text-color: #cc74ff;
-  --unity-text-color: #ffffff;
-  --testrunner-text-color: #74ff58;
-  --selenium-text-color: #0fff8b;
-  --scraping-text-color: #ff9558;
-  --c-text-color: #5b95ff;
-  --cpp-text-color: #5b95ff;
-  --php-text-color: #bd5bff;
-  --supabase-text-color: #5bff74;
-  --postman-text-color: #f6af2b;
-  --jest-text-color: #8c3333;
-  --mysql-text-color: #4de9f1;
-  --pillow-text-color: #00f2ff;
-  --os-text-color: #79ffca;
-
-  --learning--bar-fill: 25%;
-  --working--bar-fill: 50%;
-  --comfortable--bar-fill: 75%;
-  --proficient--bar-fill: 100%;
-
-  --selection-color: rgb(0, 204, 255);
-}
+@import url("./variables.css");
+@import url("./animations.css");
+@import url("./toast.css");
+@import url("./nav.css");
 
 * {
   margin: 0;
   padding: 0;
   /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  /* box-sizing: border-box; */
   font-family: "poppins";
   scroll-behavior: smooth;
   color: var(--primary-text-color);
@@ -113,89 +18,7 @@
   background-color: var(--selection-color);
 }
 
-/* creates the animation for the home section */
-@keyframes typing {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+body {
+  background-color: var(--primary-bg-color);
 }
 
-@keyframes caret-blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-.success-style {
-  background-color: var(--success-bg-color);
-  border: 2px solid var(--success-border-color);
-  display: block;
-}
-
-.error-style {
-  background-color: var(--error-bg-color);
-  border: 2px solid var(--error-border-color);
-  display: block;
-}
-
-/* this is used to display error or success messages */
-#toast-message {
-  position: fixed;
-  top: 2rem;
-
-  /* this centers the element */
-  right: 0;
-  left: 0;
-  margin-inline: auto;
-
-  max-width: 20rem;
-
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-radius: var(--card-border-radius);
-
-  /* start it off the screen */
-  transform: translate(0, -200px);
-
-  /* keep the message in front of every other element */
-  z-index: 10000;
-}
-
-nav {
-  background-color: var(--alternate-section-color);
-  padding: 1.5rem 0;
-  /* position: fixed;
-  width: 100%;
-  top: 0; */
-}
-
-nav i {
-  margin: 0 1.5rem;
-  font-size: 1.5rem;
-}
-
-.navbar-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  /* margin-top: 1rem; */
-  margin-left: 2rem;
-  list-style: none;
-
-  transform: translate(-150px, 0);
-}
-
-.navbar-list li a{
-  text-decoration: none;
-  font-size: 1.25rem;
-} 
-
-
-.hidden {
-  height: 0;
-  /* height: 150px; */
-}
