@@ -7,6 +7,32 @@ import { toolsList } from "./toolsList.js";
 
 /* 
 =====================================================
+======== MOBILE BARS MENU ======== 
+=====================================================
+*/
+const mobileMenuBars = document.getElementsByClassName("fa-solid fa-bars")[0];
+let mobileMenuIsOpen = false;
+
+const changeMobileMenu = () => {
+  if (mobileMenuIsOpen == false) {
+    // when menu is open
+    mobileMenuIsOpen = true;
+    mobileMenuBars.classList.remove("fa-bars");
+    mobileMenuBars.classList.add("fa-x");
+  } else {
+    // when menu is closed
+    mobileMenuIsOpen = false;
+    mobileMenuBars.classList.add("fa-bars");
+    mobileMenuBars.classList.remove("fa-x");
+  }
+};
+
+mobileMenuBars.addEventListener("click", () => {
+  changeMobileMenu();
+});
+
+/* 
+=====================================================
 ======== HANDLE CONTACT FORM SUBMISSION ======== 
 =====================================================
 */
