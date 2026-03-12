@@ -22,19 +22,6 @@ mobileNavIcon.addEventListener("click", () => {
   mobileMenuIsOpen = !mobileMenuIsOpen;
 });
 
-// remove the bars on desktop
-// document.addEventListener("DOMContentLoaded", () => {
-//   let details = navigator.userAgent;
-//   let regexp = /android|iphone|kindle|ipad/i;
-
-//   if (!regexp.test(details)) {
-//     mobileNavIcon.style.display = "none";
-
-//     mobileNavMenu.classList.add("navbar-list-desktop");
-//     mobileNavMenu.classList.remove("hidden");
-//   }
-// });
-
 /* 
 =====================================================
 ======== HANDLE CONTACT FORM SUBMISSION ======== 
