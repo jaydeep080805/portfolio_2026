@@ -1,12 +1,12 @@
 /* creates the animation for the home section */
-@keyframes typing {
+/* @keyframes typing {
   from {
     width: 0%;
   }
   to {
     width: 100%;
   }
-}
+} */
 
 @keyframes caret-blink {
   50% {
