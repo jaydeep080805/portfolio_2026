@@ -1,67 +1,48 @@
-// const animateNavbar = (mobileNavIcon, mobileNavMenu) => {};
+const animateNavbar = (mobileMenuIsOpen, mobileNavIcon, mobileNavMenu) => {
+  let heightTarget;
+  let textPositionTarget;
+  let heightPosition;
+  let textPosition;
 
-const animateDown = (mobileNavIcon, mobileNavMenu) => {
-  // change the styling of the icon
-  mobileNavIcon.classList.remove("fa-bars");
-  mobileNavIcon.classList.add("fa-x");
+  if (mobileMenuIsOpen == false) {
+    heightTarget = 150;
+    textPositionTarget = 0;
+    heightPosition = 0;
+    textPosition = -150;
+  } else {
+    heightTarget = 0;
+    textPositionTarget = -150;
+    heightPosition = 150;
+    textPosition = 0;
+  }
 
-  // shows the menu list background
-  // mobileNavMenu.classList.remove("hidden");
+  console.log(`Target: ${heightTarget}`);
 
-  let heightCounter = 0;
-  const heightTarget = 150;
+  const heightInterval = setInterval(() => {
+    mobileNavMenu.style.height = `${heightPosition}px`;
 
-  const heightAnimation = setInterval(() => {
-    mobileNavMenu.style.height = `${heightCounter}px`;
-    heightCounter += 3;
+    if (mobileMenuIsOpen == false) {
+      heightPosition += 3;
+    } else {
+      heightPosition -= 3;
+    }
 
-    // console.log(heightCounter);
-
-    if (heightCounter == heightTarget) {
-      clearInterval(heightAnimation);
+    if (heightPosition == heightTarget) {
+      clearInterval(heightInterval);
     }
   }, 5);
 
-  // loop through
-  let counter = -150;
-  const mobileMenuAnimation = setInterval(() => {
-    mobileNavMenu.style.transform = `translate(${counter}px, 0)`;
-    counter += 2;
+  const textInterval = setInterval(() => {
+    mobileNavMenu.style.transform = `translate(${textPosition}px, 0)`;
 
-    if (counter == 0) {
-      clearInterval(mobileMenuAnimation);
+    if (mobileMenuIsOpen == false) {
+      textPosition += 2;
+    } else {
+      textPosition -= 2;
     }
-  }, 1);
-};
 
-const animateUp = (mobileNavIcon, mobileNavMenu) => {
-  // change the styling of the icon
-  mobileNavIcon.classList.add("fa-bars");
-  mobileNavIcon.classList.remove("fa-x");
-
-  mobileNavMenu.classList.add("hidden");
-
-  let heightCounter = 150;
-  const heightTarget = 0;
-  const heightAnimation = setInterval(() => {
-    mobileNavMenu.style.height = `${heightCounter}px`;
-    heightCounter -= 3;
-
-    // console.log(heightCounter);
-
-    if (heightCounter == heightTarget) {
-      clearInterval(heightAnimation);
-    }
-  }, 5);
-
-  // loop through
-  let counter = 0;
-  const mobileMenuAnimation = setInterval(() => {
-    mobileNavMenu.style.transform = `translate(${counter}px, 0)`;
-    counter -= 2;
-
-    if (counter == -150) {
-      clearInterval(mobileMenuAnimation);
+    if (textPosition == textPositionTarget) {
+      clearInterval(textInterval);
     }
   }, 1);
 };
@@ -69,11 +50,9 @@ const animateUp = (mobileNavIcon, mobileNavMenu) => {
 export const mobileMenuAnimation = (mobileNavIcon, mobileMenuIsOpen) => {
   const mobileNavMenu = document.getElementsByClassName("navbar-list")[0];
 
-  console.log(mobileMenuIsOpen);
-
   if (mobileMenuIsOpen == false) {
-    animateDown(mobileNavIcon, mobileNavMenu);
+    animateNavbar(mobileMenuIsOpen, mobileNavIcon, mobileNavMenu);
   } else {
-    animateUp(mobileNavIcon, mobileNavMenu);
+    animateNavbar(mobileMenuIsOpen, mobileNavIcon, mobileNavMenu);
   }
 };
