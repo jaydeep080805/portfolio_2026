@@ -15,7 +15,7 @@
   --card-subtle-text-color: #ccc;
   --project-card-box-shadow-color: #333;
   --project-container-spacing: 4rem;
-  
+
   /* 
   SKILL CARD
   */
@@ -28,7 +28,6 @@
   CARD SETTINGS
   */
   --card-border-radius: 0.5rem;
-
 
   /* 
   TOAST VARIABLES
@@ -276,7 +275,6 @@ nav {
 }
 
 .card div.project-info .heading-container .link-container {
-  
 }
 
 .card div.project-info > span {
@@ -339,7 +337,9 @@ nav {
 
 .skills-section .skill-card-container {
   display: grid;
-  grid-template-columns: repeat(4, 20rem);
+  /* grid-template-columns: repeat(4, 20rem); */
+  width: 90vw;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* grid-template-rows: auto; */
   gap: var(--skill-container-spacing);
 }
@@ -351,7 +351,7 @@ nav {
 
   padding: 2rem 1rem;
   box-shadow: 0.5rem 0.5rem #222;
-  
+
   transition: all ease 200ms;
 }
 
@@ -364,7 +364,7 @@ nav {
   border-bottom: 2px dotted var(--skill-card-horizontal-line-color);
   max-width: 50%;
   margin: 0 auto;
-  
+
   margin-bottom: 0.75rem;
   padding-bottom: 0.75rem;
 }
@@ -404,7 +404,6 @@ nav {
   /* transition applied in js */
   transition: all 500ms ease;
 }
-
 
 footer {
   height: 40rem;
@@ -476,7 +475,7 @@ footer section.socials .social-option {
   padding: 0.75rem 0.75rem;
   font-size: 2rem;
   border-radius: var(--card-border-radius);
-  
+
   /* align-self: flex-end; */
   margin-top: auto;
   margin-bottom: 3rem;
@@ -496,7 +495,7 @@ footer section .social-container {
   display: flex;
   justify-content: start;
   align-items: center;
-  
+
   font-weight: 300;
   margin-left: 5rem;
   height: 100%;
@@ -528,7 +527,7 @@ footer section.horizontal-line {
   margin: 0 20rem;
 }
 
-@media (200px <= width <= 600px) {
+@media (200px <= width <= 800px) {
   #home h2 {
     text-wrap: wrap;
     display: inline-block;
@@ -602,5 +601,32 @@ footer section.horizontal-line {
 
   footer section.socials .social-option {
     font-size: 1.5rem;
+  }
+}
+
+@media (800px <= width <= 1000px) {
+  footer section.socials .social-option {
+    margin-top: 0;
+  }
+
+  footer section .social-container {
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    gap: 0;
+    margin: 0 0 3rem 0;
+  }
+
+  footer {
+    /* gap: 2rem; */
+  }
+
+  footer section.contact{
+    margin: 0;
+  }
+
+  footer section.horizontal-line {
+    /* margin: 0 10rem; */
+    margin: 0;
   }
 }
