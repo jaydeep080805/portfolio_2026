@@ -170,25 +170,28 @@ nav {
 }
 
 nav i {
-  margin: 0 1rem;
-  font-size: 1.25rem;
+  margin: 0 1.5rem;
+  font-size: 1.5rem;
 }
 
 .navbar-list {
-  display: none;
-}
-
-/* .navbar-list {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
+  flex-direction: column;
+  gap: 0.5rem;
 
-.navbar-list li {
+  margin-top: 1rem;
+  margin-left: 2rem;
   list-style: none;
+
+  transform: translate(-150px, 0);
 }
 
 .navbar-list li a{
   text-decoration: none;
-} */
+  font-size: 1.25rem;
+} 
 
+
+.hidden {
+  display: none;
+}

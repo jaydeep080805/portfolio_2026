@@ -10,24 +10,50 @@ import { toolsList } from "./toolsList.js";
 ======== MOBILE BARS MENU ======== 
 =====================================================
 */
-const mobileMenuBars = document.getElementsByClassName("fa-solid fa-bars")[0];
+const mobileNavIcon = document.getElementsByClassName("fa-solid fa-bars")[0];
+const mobileNavMenu = document.getElementsByClassName("navbar-list")[0];
 let mobileMenuIsOpen = false;
 
 const changeMobileMenu = () => {
   if (mobileMenuIsOpen == false) {
     // when menu is open
     mobileMenuIsOpen = true;
-    mobileMenuBars.classList.remove("fa-bars");
-    mobileMenuBars.classList.add("fa-x");
+
+    // change the styling of the icon
+    mobileNavIcon.classList.remove("fa-bars");
+    mobileNavIcon.classList.add("fa-x");
+
+    // shows the menu list background
+    mobileNavMenu.classList.remove("hidden");
+
+    // loop through
+    let counter = -150;
+    const mobileMenuAnimation = setInterval(() => {
+      mobileNavMenu.style.transform = `translate(${counter}px, 0)`;
+      console.log(counter);
+      counter += 3;
+
+      if (counter == 0) {
+        clearInterval(mobileMenuAnimation);
+      }
+    }, 1);
+
+    // add the menu in
   } else {
     // when menu is closed
     mobileMenuIsOpen = false;
-    mobileMenuBars.classList.add("fa-bars");
-    mobileMenuBars.classList.remove("fa-x");
+
+    // change the styling of the icon
+    mobileNavIcon.classList.add("fa-bars");
+    mobileNavIcon.classList.remove("fa-x");
+
+    mobileNavMenu.classList.add("hidden");
+
+    mobileNavMenu.style.transform = `translate(-150px, 0)`;
   }
 };
 
-mobileMenuBars.addEventListener("click", () => {
+mobileNavIcon.addEventListener("click", () => {
   changeMobileMenu();
 });
 
