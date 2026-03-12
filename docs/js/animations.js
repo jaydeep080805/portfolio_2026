@@ -34,9 +34,9 @@ const animateNavbar = (mobileMenuIsOpen, mobileNavIcon, mobileNavMenu) => {
     mobileNavMenu.style.height = `${heightPosition}px`;
 
     if (mobileMenuIsOpen == false) {
-      heightPosition += 3;
+      heightPosition += 5;
     } else {
-      heightPosition -= 3;
+      heightPosition -= 2;
     }
 
     if (heightPosition == heightTarget) {
@@ -50,13 +50,13 @@ const animateNavbar = (mobileMenuIsOpen, mobileNavIcon, mobileNavMenu) => {
     if (mobileMenuIsOpen == false) {
       textPosition += 2;
     } else {
-      textPosition -= 2;
+      textPosition -= 10;
     }
 
     if (textPosition == textPositionTarget) {
       clearInterval(textInterval);
     }
-  }, 1);
+  }, 10);
 };
 
 export const mobileMenuAnimation = (mobileNavIcon, mobileMenuIsOpen) => {
