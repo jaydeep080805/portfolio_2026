@@ -4,19 +4,31 @@ const animateNavbar = (mobileMenuIsOpen, mobileNavIcon, mobileNavMenu) => {
   let heightPosition;
   let textPosition;
 
+  // sets the target values dependant on if the menu is open or not
   if (mobileMenuIsOpen == false) {
+    // change the icon
+    mobileNavIcon.classList.remove("fa-bars");
+    mobileNavIcon.classList.add("fa-x");
+
+    // the height and position they should be
     heightTarget = 150;
     textPositionTarget = 0;
+
+    // their current positions
     heightPosition = 0;
     textPosition = -150;
   } else {
+    // change the icon
+    mobileNavIcon.classList.remove("fa-x");
+    mobileNavIcon.classList.add("fa-bars");
+
+    // the height and position they should be
     heightTarget = 0;
     textPositionTarget = -150;
+    // their current positions
     heightPosition = 150;
     textPosition = 0;
   }
-
-  console.log(`Target: ${heightTarget}`);
 
   const heightInterval = setInterval(() => {
     mobileNavMenu.style.height = `${heightPosition}px`;
