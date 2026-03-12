@@ -3,6 +3,7 @@
 @import url("./toast.css");
 @import url("./nav.css");
 @import url("./home.css");
+@import url("./about.css");
 
 * {
   margin: 0;
@@ -24,9 +25,12 @@ body {
 }
 
 .section {
-  height: 40rem;
+  min-height: 40rem;
+  padding: 2rem 0;
 }
 
-#about {
-  background-color: var(--alternate-section-color);
+.horizontal-line {
+  border-bottom: 1px solid var(--horizontal-line-color);
+  width: 80%;
+  margin: 2rem 0;
 }

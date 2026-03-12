@@ -186,77 +186,77 @@ mobileNavIcon.addEventListener("click", () => {
 ======== ADDING SKILLS TO DOM ======== 
 =====================================================
 */
-// const skillCardContainer = document.getElementsByClassName(
-//   "skill-card-container",
-// )[0];
+const skillCardContainer = document.getElementsByClassName(
+  "skill-card-container",
+)[0];
 
-// for (let stack in toolsList) {
-//   // contains the information within the cards
-//   const stackCard = document.createElement("div");
-//   stackCard.classList.add("stack-card");
+for (let stack in toolsList) {
+  // contains the information within the cards
+  const stackCard = document.createElement("div");
+  stackCard.classList.add("stack-card");
 
-//   // sets the heading for each card
-//   const stackCardHeading = document.createElement("h3");
-//   stackCardHeading.textContent = stack;
+  // sets the heading for each card
+  const stackCardHeading = document.createElement("h3");
+  stackCardHeading.textContent = stack;
 
-//   // add the card heading to the card
-//   stackCard.appendChild(stackCardHeading);
-//   // add the card to the grid container
-//   skillCardContainer.appendChild(stackCard);
+  // add the card heading to the card
+  stackCard.appendChild(stackCardHeading);
+  // add the card to the grid container
+  skillCardContainer.appendChild(stackCard);
 
-//   // loop through the skills
-//   toolsList[stack].map((s) => {
-//     const { name, fillAmount, colorName, skillLevel, icon } = s;
+  // loop through the skills
+  toolsList[stack].map((s) => {
+    const { name, fillAmount, colorName, skillLevel, icon } = s;
 
-//     // create a wrapper for each skill
-//     const skillWrapper = document.createElement("div");
-//     skillWrapper.classList.add("skill-wrapper");
+    // create a wrapper for each skill
+    const skillWrapper = document.createElement("div");
+    skillWrapper.classList.add("skill-wrapper");
 
-//     // add an icon to the start of each skill
-//     const skillIcon = document.createElement("img");
-//     skillIcon.classList.add("skill-icon");
-//     skillIcon.src = icon;
+    // add an icon to the start of each skill
+    const skillIcon = document.createElement("img");
+    skillIcon.classList.add("skill-icon");
+    skillIcon.src = icon;
 
-//     // add the name for each skill
-//     const skillName = document.createElement("span");
-//     skillName.classList.add("skill-name");
-//     skillName.textContent = ` ${name} - `;
+    // add the name for each skill
+    const skillName = document.createElement("span");
+    skillName.classList.add("skill-name");
+    skillName.textContent = ` ${name} - `;
 
-//     // add icon to the wrapper
-//     skillWrapper.appendChild(skillIcon);
-//     // add the name to the wrapper
-//     skillWrapper.appendChild(skillName);
+    // add icon to the wrapper
+    skillWrapper.appendChild(skillIcon);
+    // add the name to the wrapper
+    skillWrapper.appendChild(skillName);
 
-//     for (let i = 0; i < 5; i++) {
-//       // create a .dot class
-//       const dot = document.createElement("div");
-//       dot.classList.add("dot");
+    for (let i = 0; i < 5; i++) {
+      // create a .dot class
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
 
-//       // check how many dots should be filled
-//       if (i < fillAmount) {
-//         // set the class to be filled
-//         dot.classList.add("filled-dot");
+      // check how many dots should be filled
+      if (i < fillAmount) {
+        // set the class to be filled
+        dot.classList.add("filled-dot");
 
-//         // add the hover events
-//         dot.addEventListener("mouseover", () => {
-//           dot.style.backgroundColor = `var(--${colorName}-text-color)`;
-//         });
+        // add the hover events
+        dot.addEventListener("mouseover", () => {
+          dot.style.backgroundColor = `var(--${colorName}-text-color)`;
+        });
 
-//         dot.addEventListener("mouseleave", () => {
-//           setTimeout(() => {
-//             dot.style.backgroundColor = "white";
-//           }, 2000);
-//         });
-//       }
+        dot.addEventListener("mouseleave", () => {
+          setTimeout(() => {
+            dot.style.backgroundColor = "white";
+          }, 2000);
+        });
+      }
 
-//       // add the dots to the end of the wrapper
-//       skillWrapper.appendChild(dot);
-//     }
+      // add the dots to the end of the wrapper
+      skillWrapper.appendChild(dot);
+    }
 
-//     // add the wrapper to the card
-//     stackCard.appendChild(skillWrapper);
-//   });
-// }
+    // add the wrapper to the card
+    stackCard.appendChild(skillWrapper);
+  });
+}
 
 // const socialmediaOptions = document.getElementsByClassName("social-option");
 
