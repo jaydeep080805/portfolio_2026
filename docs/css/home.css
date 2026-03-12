@@ -1,0 +1,42 @@
+#home {
+  background-color: var(--primary-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+.typing-animation-container h2 {
+  margin: 0 0.5rem;
+}
+
+.typing-animation-container h2::after {
+  content: "";
+  position: absolute;
+  
+  border-right: 2px solid var(--selection-color);
+  height: 40px;
+  
+  margin-left: 1px;
+  margin-top: 20px;
+  
+  animation: caret-blink 1s linear infinite normal 5s;
+
+}
+
+
+@media (min-width: 600px) {
+  .typing-animation-container h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: var(--selection-color) solid 2px;
+
+    animation: caret-blink 1s linear infinite normal 5s;
+  }
+  
+  .typing-animation-container h2::after {
+    display: none;
+  }
+}

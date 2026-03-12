@@ -68,3 +68,16 @@ export const mobileMenuAnimation = (mobileNavIcon, mobileMenuIsOpen) => {
     animateNavbar(mobileMenuIsOpen, mobileNavIcon, mobileNavMenu);
   }
 };
+
+export const animateHomeText = () => {
+  const text = "Hi I'm Jay, a Junior Software Engineer";
+  const homeText = document.querySelector(".typing-animation-container h2");
+
+  const letterList = text.split("");
+
+  for (let i = 0; i < letterList.length; i++) {
+    setTimeout(() => {
+      homeText.textContent += letterList[i];
+    }, 100 * i);
+  }
+};
