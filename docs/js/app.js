@@ -4,57 +4,19 @@ import { API_URL } from "./config.js";
 import { animateToastMessage, checkEmailValid } from "./utils.js";
 import { projectInfo } from "./projectList.js";
 import { toolsList } from "./toolsList.js";
+import { mobileMenuAnimation } from "./animations.js";
 
 /* 
 =====================================================
 ======== MOBILE BARS MENU ======== 
 =====================================================
 */
-const mobileNavIcon = document.getElementsByClassName("fa-solid fa-bars")[0];
-const mobileNavMenu = document.getElementsByClassName("navbar-list")[0];
+
+const mobileNavIcon = document.getElementsByClassName("fa-bars")[0];
 let mobileMenuIsOpen = false;
-
-const changeMobileMenu = () => {
-  if (mobileMenuIsOpen == false) {
-    // when menu is open
-    mobileMenuIsOpen = true;
-
-    // change the styling of the icon
-    mobileNavIcon.classList.remove("fa-bars");
-    mobileNavIcon.classList.add("fa-x");
-
-    // shows the menu list background
-    mobileNavMenu.classList.remove("hidden");
-
-    // loop through
-    let counter = -150;
-    const mobileMenuAnimation = setInterval(() => {
-      mobileNavMenu.style.transform = `translate(${counter}px, 0)`;
-      console.log(counter);
-      counter += 3;
-
-      if (counter == 0) {
-        clearInterval(mobileMenuAnimation);
-      }
-    }, 1);
-
-    // add the menu in
-  } else {
-    // when menu is closed
-    mobileMenuIsOpen = false;
-
-    // change the styling of the icon
-    mobileNavIcon.classList.add("fa-bars");
-    mobileNavIcon.classList.remove("fa-x");
-
-    mobileNavMenu.classList.add("hidden");
-
-    mobileNavMenu.style.transform = `translate(-150px, 0)`;
-  }
-};
-
 mobileNavIcon.addEventListener("click", () => {
-  changeMobileMenu();
+  mobileMenuAnimation(mobileNavIcon, mobileMenuIsOpen);
+  mobileMenuIsOpen = !mobileMenuIsOpen;
 });
 
 /* 

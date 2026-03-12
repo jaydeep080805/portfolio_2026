@@ -167,6 +167,9 @@
 nav {
   background-color: var(--alternate-section-color);
   padding: 1.5rem 0;
+  /* position: fixed;
+  width: 100%;
+  top: 0; */
 }
 
 nav i {
@@ -179,7 +182,7 @@ nav i {
   flex-direction: column;
   gap: 0.5rem;
 
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   margin-left: 2rem;
   list-style: none;
 
@@ -193,5 +196,6 @@ nav i {
 
 
 .hidden {
-  display: none;
+  height: 0;
+  /* height: 150px; */
 }
