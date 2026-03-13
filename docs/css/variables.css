@@ -25,7 +25,7 @@
   SKILL CARD
   */
   --skill-card-bg-color: var(--primary-bg-color);
-  --skill-card-box-shadow-color: #444;
+  --skill-card-box-shadow-color: #130c0c;
   --skill-card-horizontal-line-color: #999;
   --skill-container-spacing: 4rem;
   --skill-card-gradient-left-color: #6c3bff88;
@@ -44,10 +44,10 @@
    */
   /* --success-bg-color: #48f55fcc;
   --success-border-color: #51ff41c1; */
-  --success-bg-color: #89cff0d6;
+  --success-bg-color: #1cb7ff;
   --success-border-color: #89cff0;
 
-  --error-bg-color: #f54848ca;
+  --error-bg-color: #db0000;
   --error-border-color: #ff4141c1;
 
   /* 

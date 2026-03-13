@@ -13,7 +13,7 @@
 /* this is used to display error or success messages */
 #toast-message {
   position: fixed;
-  top: 2rem;
+  top: 1rem;
 
   /* this centers the element */
   right: 0;
@@ -27,8 +27,14 @@
   border-radius: var(--card-border-radius);
 
   /* start it off the screen */
-  transform: translate(0, -200px);
+  transform: translate(0, -400px);
 
   /* keep the message in front of every other element */
   z-index: 10000;
+}
+
+@media (min-width: 800px) {
+  #toast-message {
+    top: 6rem;
+  }
 }
