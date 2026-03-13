@@ -1,6 +1,5 @@
 #about {
-  background-color: var(--alternate-section-color);
-
+  /* put the about and skills section in a column format and align them in the center */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,6 +7,10 @@
   text-align: center;
 }
 
+/* mobile edge spacing */
+.about-section {
+  margin: 0 1rem;
+}
 
 .skills-section .skill-card-container {
   /* use this to create a margin from the edges */

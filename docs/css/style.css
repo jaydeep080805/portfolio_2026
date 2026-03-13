@@ -21,13 +21,17 @@
   background-color: var(--selection-color);
 }
 
-body {
-  background-color: var(--primary-bg-color);
-}
-
 .section {
   min-height: 40rem;
   padding: 2rem 0;
+}
+
+.section:nth-child(odd) {
+  background-color: var(--primary-bg-color);
+}
+
+.section:nth-child(even) {
+  background-color: var(--alternate-section-color);
 }
 
 .section h2 {
