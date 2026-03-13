@@ -6,6 +6,11 @@
   place-items: center;
 }
 
+.project-card-image-container  {
+  display: flex;
+  justify-content: center;
+}
+
 .project-card-image-container img {
   width: 20rem;
   height: 10rem;
@@ -58,7 +63,7 @@
   font-weight: 400;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .project-card-image-container img {
     width: 30rem;
     height: 20rem;
