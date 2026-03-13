@@ -34,12 +34,13 @@
   background-color: var(--alternate-section-color);
 }
 
-.section h2 {
+.section > h2,
+.about-section > h2,
+.skills-section > h2 {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
 }
-
 
 .horizontal-line {
   border-bottom: 1px solid var(--horizontal-line-color);
