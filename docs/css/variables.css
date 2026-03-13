@@ -60,7 +60,7 @@
   /* 
   ICON VARIABLES
    */
-  --icon-bg-color: #555;
+  --icon-bg-color: var(--primary-bg-color);
   --icon-hover-bg-color: white;
   --icon-hover-text-color: #222;
 
