@@ -15,11 +15,19 @@ footer {
   FORM STYLING 
 */
 
+/* make sure the form doesn't overflow */
+.contact {
+  width: 90%;
+}
+
 /* put the form inputs in a col */
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.5rem;
+  
+  width: 100%;
 }
 
 form label {
