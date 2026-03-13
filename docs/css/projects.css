@@ -82,7 +82,7 @@
       var(--skill-card-gradient-right-color)
     );
 
-    filter: blur(5px);
+    filter: blur(10px);
     inset: -1px;
 
     transition: all ease 400ms;
@@ -95,6 +95,6 @@
       var(--skill-card-gradient-right-hover-color)
     );
     inset: -10px;
-    filter: blur(10px);
+    filter: blur(15px);
   }
 }
