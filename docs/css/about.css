@@ -8,18 +8,10 @@
   text-align: center;
 }
 
-.about-section {
-  margin: 0 1rem;
-}
-
-.skills-section > h2 {
-  margin-bottom: 2rem;
-}
 
 .skills-section .skill-card-container {
   /* use this to create a margin from the edges */
   width: 80vw;
-
 
   display: grid;
   /* keeps the grid scalable across devices
@@ -57,8 +49,6 @@
   transition: transform 200ms ease;
 }
 
-
-
 .skills-section .skill-name {
   font-weight: bold;
   cursor: default;
@@ -93,6 +83,6 @@
   }
 
   .skills-section .skill-icon:hover {
-  transform: scale(1.2);
-}
+    transform: scale(1.2);
+  }
 }

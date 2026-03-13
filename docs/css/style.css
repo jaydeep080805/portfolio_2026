@@ -4,6 +4,7 @@
 @import url("./nav.css");
 @import url("./home.css");
 @import url("./about.css");
+@import url("./projects.css");
 
 * {
   margin: 0;
@@ -28,6 +29,13 @@ body {
   min-height: 40rem;
   padding: 2rem 0;
 }
+
+.section h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
 
 .horizontal-line {
   border-bottom: 1px solid var(--horizontal-line-color);
