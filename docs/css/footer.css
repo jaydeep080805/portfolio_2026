@@ -4,6 +4,9 @@ footer {
   place-items: center;
   gap: 1rem;
 
+  /* remove any reason for it to go off screen with paddings or margins */
+  overflow-x: hidden;
+
   /* im not sure why this isn't being applied through the main .section style */
   background-color: var(--alternate-section-color) !important;
 }
@@ -111,7 +114,7 @@ form button {
     var(--skill-card-gradient-left-hover-color),
     var(--skill-card-gradient-right-hover-color)
   );
-  
+
   inset: -2px;
   filter: blur(12px);
   opacity: 0.55;
