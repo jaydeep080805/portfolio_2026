@@ -25,7 +25,7 @@
   SKILL CARD
   */
   --skill-card-bg-color: var(--primary-bg-color);
-  --skill-card-box-shadow-color: #130c0c;
+  --skill-card-box-shadow-color: #333;
   --skill-card-horizontal-line-color: #999;
   --skill-container-spacing: 4rem;
   --skill-card-gradient-left-color: #6c3bff88;
