@@ -5,6 +5,7 @@
 @import url("./home.css");
 @import url("./about.css");
 @import url("./projects.css");
+@import url("./footer.css");
 
 * {
   margin: 0;
