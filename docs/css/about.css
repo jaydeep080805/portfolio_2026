@@ -17,11 +17,14 @@
 }
 
 .skills-section .skill-card-container {
-  display: grid;
-  /* grid-template-columns: repeat(4, 20rem); */
+  /* use this to create a margin from the edges */
   width: 80vw;
+
+
+  display: grid;
+  /* keeps the grid scalable across devices
+  will keep the col to a min of the stack card size  */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* grid-template-rows: auto; */
   gap: var(--skill-container-spacing);
 }
 
@@ -34,11 +37,6 @@
   box-shadow: 0.5rem 0.5rem var(--skill-card-box-shadow-color);
 
   transition: all ease 200ms;
-}
-
-.skills-section .stack-card:hover {
-  box-shadow: 1rem 1rem var(--skill-card-box-shadow-color);
-  transform: translate(0, -10px);
 }
 
 .skills-section .stack-card > h3 {
@@ -59,9 +57,7 @@
   transition: transform 200ms ease;
 }
 
-.skills-section .skill-icon:hover {
-  transform: scale(1.2);
-}
+
 
 .skills-section .skill-name {
   font-weight: bold;
@@ -86,10 +82,17 @@
   transition: all 500ms ease;
 }
 
-
-
 @media (min-width: 600px) {
   .about-section {
     margin: 0 20rem;
   }
+
+  .skills-section .stack-card:hover {
+    box-shadow: 1rem 1rem var(--skill-card-box-shadow-color);
+    transform: translate(0, -10px);
+  }
+
+  .skills-section .skill-icon:hover {
+  transform: scale(1.2);
+}
 }
