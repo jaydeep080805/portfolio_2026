@@ -5,8 +5,8 @@
   --primary-text-color: white;
   --primary-text-hover-color: #aaa;
 
-  --primary-bg-color: #222;
-  --alternate-section-color: #111;
+  --primary-bg-color: #222222;
+  --alternate-section-color: #111111;
 
 
   /* 
@@ -17,7 +17,7 @@
   /* 
   PROJECT CARD VARIABLES
   */
-  --card-bg-color: #222;
+  --card-bg-color: #111111;
   --card-subtle-text-color: #ccc;
   --project-card-box-shadow-color: #333;
   --project-container-spacing: 4rem;
@@ -29,6 +29,11 @@
   --skill-card-box-shadow-color: #444;
   --skill-card-horizontal-line-color: #999;
   --skill-container-spacing: 4rem;
+  --skill-card-gradient-left-color: #6C3BFF88;
+  --skill-card-gradient-right-color: #FF4D8D88;
+
+  --skill-card-gradient-left-hover-color: #6C3BFF;
+  --skill-card-gradient-right-hover-color: #FF4D8D;
 
   /* 
   CARD SETTINGS

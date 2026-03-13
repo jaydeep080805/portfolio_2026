@@ -1,0 +1,100 @@
+.project-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(80%, 500px), 1fr));
+  gap: 4rem;
+
+  place-items: center;
+}
+
+.project-card-image-container img {
+  width: 20rem;
+  height: 10rem;
+  object-fit: contain;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 0 1rem;
+
+  background-color: var(--card-bg-color);
+
+  position: relative;
+
+  /* without this, the gradient will be placed on top of the card instead of behind
+  this preserves the Z posiiton on the child element */
+  transform-style: preserve-3d;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+
+  /* this does the same as translate, but on the z axis aswell 
+  this allows the background colour gradient to be behind the card */
+  transform: translate3d(0px, 0px, -1px);
+  background: linear-gradient(
+    to right,
+    var(--skill-card-gradient-left-hover-color),
+    var(--skill-card-gradient-right-hover-color)
+  );
+  filter: blur(5px);
+
+  /* controls how far the colour is from the parent element .card
+  a negative value needs to be used so that it shows around the card instead of inside */
+  inset: -1px;
+}
+
+.project-info .tools-used-text {
+  display: block;
+
+  color: var(--card-subtle-text-color);
+  margin: -0.25rem 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.project-info p {
+  margin-top: 1rem;
+  font-weight: 400;
+}
+
+@media (min-width: 600px) {
+  .project-card-image-container img {
+    width: 30rem;
+    height: 20rem;
+    max-height: fit-content;
+
+    object-fit: cover;
+  }
+
+  .project-card-container {
+    margin: 0 10rem;
+  }
+
+  .card {
+    width: 30rem;
+  }
+
+  .card::before {
+    background: linear-gradient(
+      to right,
+      var(--skill-card-gradient-left-color),
+      var(--skill-card-gradient-right-color)
+    );
+
+    filter: blur(5px);
+    inset: -1px;
+
+    transition: all ease 400ms;
+  }
+
+  .card:hover::before {
+    background: linear-gradient(
+      to right,
+      var(--skill-card-gradient-left-hover-color),
+      var(--skill-card-gradient-right-hover-color)
+    );
+    inset: -10px;
+    filter: blur(10px);
+  }
+}

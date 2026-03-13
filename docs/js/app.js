@@ -107,79 +107,81 @@ mobileNavIcon.addEventListener("click", () => {
 =====================================================
 */
 
-// const projectCardContainer = document.getElementsByClassName(
-//   "project-card-container",
-// )[0];
+const projectCardContainer = document.getElementsByClassName(
+  "project-card-container",
+)[0];
 
-// projectInfo.map((project) => {
-//   const { link, image, imageAlt, title, tools, toolColours, description } =
-//     project;
+projectInfo.map((project) => {
+  const { link, image, imageAlt, title, tools, toolColours, description } =
+    project;
 
-//   const cardElement = document.createElement("article");
-//   cardElement.classList.add("card");
+  const cardElement = document.createElement("article");
+  cardElement.classList.add("card");
 
-//   // create the image container
-//   const projectCardImageContainerElement = document.createElement("div");
-//   projectCardImageContainerElement.classList.add(
-//     "project-card-image-container",
-//   );
+  // create the image container
+  const projectCardImageContainerElement = document.createElement("div");
+  projectCardImageContainerElement.classList.add(
+    "project-card-image-container",
+  );
 
-//   // create the link
-//   const hyperLinkElement = document.createElement("a");
-//   hyperLinkElement.href = link;
+  // create the link
+  const hyperLinkElement = document.createElement("a");
+  hyperLinkElement.href = link;
 
-//   // create the image
-//   const imageElement = document.createElement("img");
-//   imageElement.src = image;
-//   imageElement.alt = imageAlt;
+  // create the image
+  const imageElement = document.createElement("img");
+  imageElement.src = image;
+  imageElement.alt = imageAlt;
 
-//   // ======== IMAGE SECTION ======== //
-//   // add the image container to the card
-//   cardElement.appendChild(projectCardImageContainerElement);
-//   // add the hyperlink and image to the image container
-//   projectCardImageContainerElement.appendChild(hyperLinkElement);
-//   // wrap the image in the <a></a> tag
-//   hyperLinkElement.appendChild(imageElement);
+  // ======== IMAGE SECTION ======== //
+  // add the image container to the card
+  cardElement.appendChild(projectCardImageContainerElement);
+  // add the hyperlink and image to the image container
+  projectCardImageContainerElement.appendChild(hyperLinkElement);
+  // wrap the image in the <a></a> tag
+  hyperLinkElement.appendChild(imageElement);
 
-//   // ======== INFO SECTION ======== //
-//   const projectInfoSectionElement = document.createElement("div");
-//   projectInfoSectionElement.classList.add("project-info");
+  // ======== INFO SECTION ======== //
+  const projectInfoSectionElement = document.createElement("div");
+  projectInfoSectionElement.classList.add("project-info");
 
-//   const headingElement = document.createElement("h2");
-//   headingElement.textContent = title;
+  const headingElement = document.createElement("h2");
+  headingElement.textContent = title;
 
-//   // loop through the tools
-//   const toolsUsedElement = document.createElement("span");
-//   toolsUsedElement.textContent = "Tools used: ";
-//   tools.map((t, index) => {
-//     const toolTextSpan = document.createElement("span");
-//     // toolTextSpan.classList.add(`${t.toLowerCase()}-text`);
-//     toolTextSpan.style.color = `var(--${toolColours[index]}-text-color)`;
+  // loop through the tools
+  const toolsUsedElement = document.createElement("span");
+  toolsUsedElement.textContent = "Tools used: ";
+  toolsUsedElement.classList.add("tools-used-text");
+  tools.map((t, index) => {
+    const toolTextSpan = document.createElement("span");
+    toolTextSpan.classList.add("tool");
+    // toolTextSpan.classList.add(`${t.toLowerCase()}-text`);
+    toolTextSpan.style.color = `var(--${toolColours[index]}-text-color)`;
 
-//     if (index + 1 == tools.length) {
-//       toolTextSpan.textContent = `${t}`;
-//     } else {
-//       toolTextSpan.textContent = `${t}, `;
-//     }
+    if (index + 1 == tools.length) {
+      toolTextSpan.textContent = `${t}`;
+    } else {
+      toolTextSpan.textContent = `${t}, `;
+    }
 
-//     // console.log(toolTextSpan);
+    // console.log(toolTextSpan);
 
-//     // toolsUsedElement.textContent = toolsUsedElement.textContent + `${t}, `;
-//     toolsUsedElement.appendChild(toolTextSpan);
-//   });
+    // toolsUsedElement.textContent = toolsUsedElement.textContent + `${t}, `;
+    toolsUsedElement.appendChild(toolTextSpan);
+  });
 
-//   const descriptionElement = document.createElement("p");
-//   descriptionElement.textContent = description;
+  const descriptionElement = document.createElement("p");
+  descriptionElement.textContent = description;
 
-//   projectInfoSectionElement.appendChild(headingElement);
-//   projectInfoSectionElement.appendChild(toolsUsedElement);
-//   projectInfoSectionElement.appendChild(descriptionElement);
+  projectInfoSectionElement.appendChild(headingElement);
+  projectInfoSectionElement.appendChild(toolsUsedElement);
+  projectInfoSectionElement.appendChild(descriptionElement);
 
-//   cardElement.appendChild(projectInfoSectionElement);
+  cardElement.appendChild(projectInfoSectionElement);
 
-//   // add the card to the dom
-//   projectCardContainer.append(cardElement);
-// });
+  // add the card to the dom
+  projectCardContainer.append(cardElement);
+});
 
 /* 
 =====================================================
