@@ -8,7 +8,6 @@
   --primary-bg-color: #222222;
   --alternate-section-color: #111111;
 
-
   /* 
   NAV VARIABLES
   */
@@ -29,11 +28,11 @@
   --skill-card-box-shadow-color: #444;
   --skill-card-horizontal-line-color: #999;
   --skill-container-spacing: 4rem;
-  --skill-card-gradient-left-color: #6C3BFF88;
-  --skill-card-gradient-right-color: #FF4D8D88;
+  --skill-card-gradient-left-color: #6c3bff88;
+  --skill-card-gradient-right-color: #ff4d8d88;
 
-  --skill-card-gradient-left-hover-color: #6C3BFF;
-  --skill-card-gradient-right-hover-color: #FF4D8D;
+  --skill-card-gradient-left-hover-color: #6c3bff;
+  --skill-card-gradient-right-hover-color: #ff4d8d;
 
   /* 
   CARD SETTINGS
@@ -61,8 +60,13 @@
   ICON VARIABLES
    */
   --icon-bg-color: var(--primary-bg-color);
+  --icon-bg-hover-color: #111111bb;
   --icon-hover-bg-color: white;
   --icon-hover-text-color: #222;
+  --icon-border-color: #ffffff14;
+  --icon-border-hover-color: #ffffff29;
+  
+  
 
   /* BUTTON VARIABLES */
   --button-bg-color: #417aff;
@@ -108,4 +112,9 @@
   --proficient--bar-fill: 100%;
 
   --selection-color: rgb(0, 204, 255);
+
+  /* 
+  BREAKPOINT
+   */
+  /* --mobile-breakpoint: 800px; */
 }
