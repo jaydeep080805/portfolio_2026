@@ -40,7 +40,8 @@ nav i {
 
 @media (min-width: 600px) {
   header {
-    top: 1rem;
+    padding-top: 1rem;
+    background-color: var(--primary-bg-color);
   }
   
   nav .fa-bars {
@@ -48,9 +49,10 @@ nav i {
   }
 
   nav {
-    min-width: calc(min-content + 5rem);
-    max-width: 40rem;
-    margin: 1rem auto;
+    min-width: calc(min-content);
+    width: 40rem;
+
+    margin: 0 auto;
     border-radius: 20px;
   }
 
