@@ -40,8 +40,11 @@ nav i {
 
 @media (min-width: 600px) {
   header {
-    padding-top: 1rem;
-    background-color: var(--primary-bg-color);
+    /* padding-top: 1rem; */
+    display: sticky;
+    height: 0;
+    top: 1rem;
+    background-color: transparent;
   }
   
   nav .fa-bars {
