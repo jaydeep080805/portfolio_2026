@@ -76,6 +76,7 @@
 
   .card {
     width: 30rem;
+    transition: background-color ease 200ms;
   }
 
   .card:hover {
