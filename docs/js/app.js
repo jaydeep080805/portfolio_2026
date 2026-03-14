@@ -145,7 +145,9 @@ projectInfo.map((project) => {
   const projectInfoSectionElement = document.createElement("div");
   projectInfoSectionElement.classList.add("project-info");
 
-  const headingElement = document.createElement("h2");
+  const headingElement = document.createElement("a");
+  headingElement.classList.add("project-title");
+  headingElement.href = link;
   headingElement.textContent = title;
 
   // loop through the tools

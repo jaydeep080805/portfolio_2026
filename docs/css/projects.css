@@ -6,7 +6,7 @@
   place-items: center;
 }
 
-.project-card-image-container  {
+.project-card-image-container {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -51,6 +51,17 @@
   inset: -1px;
 }
 
+.project-info .project-title {
+  display: block;
+
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: fit-content;
+
+  transition: color ease 200ms;
+}
+
 .project-info .tools-used-text {
   display: block;
 
@@ -81,7 +92,7 @@
   }
 
   .card:hover {
-  background-color: #111111cc;
+    background-color: #111111cc;
   }
 
   .card::before {
@@ -105,5 +116,9 @@
     );
     inset: -10px;
     filter: blur(15px);
+  }
+
+  .project-info .project-title:hover {
+    color: var(--card-title-hover-color);
   }
 }
