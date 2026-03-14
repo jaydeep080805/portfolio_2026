@@ -78,6 +78,10 @@
     width: 30rem;
   }
 
+  .card:hover {
+  background-color: #111111cc;
+  }
+
   .card::before {
     background: linear-gradient(
       to right,
