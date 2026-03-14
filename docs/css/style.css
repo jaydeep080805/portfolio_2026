@@ -17,6 +17,10 @@
   color: var(--primary-text-color);
 }
 
+body {
+  caret-color: var(--selection-color);
+}
+
 /* change the highlight colour */
 *::selection {
   background-color: var(--selection-color);
