@@ -127,6 +127,7 @@ projectInfo.map((project) => {
   // create the link
   const hyperLinkElement = document.createElement("a");
   hyperLinkElement.href = link;
+  hyperLinkElement.target = "_blank";
 
   // create the image
   const imageElement = document.createElement("img");
@@ -148,6 +149,7 @@ projectInfo.map((project) => {
   const headingElement = document.createElement("a");
   headingElement.classList.add("project-title");
   headingElement.href = link;
+  headingElement.target = "_blank";
   headingElement.textContent = title;
 
   // loop through the tools
