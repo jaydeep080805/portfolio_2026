@@ -30,33 +30,40 @@ const animateNavbar = (mobileMenuIsOpen, mobileNavIcon, mobileNavMenu) => {
     textPosition = 0;
   }
 
-  const heightInterval = setInterval(() => {
+  const animateHeight = () => {
     mobileNavMenu.style.height = `${heightPosition}px`;
 
     if (mobileMenuIsOpen == false) {
       heightPosition += 5;
     } else {
-      heightPosition -= 2;
+      heightPosition -= 5;
     }
 
     if (heightPosition == heightTarget) {
-      clearInterval(heightInterval);
+      return;
     }
-  }, 5);
 
-  const textInterval = setInterval(() => {
-    mobileNavMenu.style.transform = `translate(${textPosition}px, 0)`;
+    requestAnimationFrame(animateHeight);
+  };
+
+  const animateText = () => {
+    mobileNavMenu.style.transform = `translateX(${textPosition}px)`;
 
     if (mobileMenuIsOpen == false) {
-      textPosition += 2;
+      textPosition += 5;
     } else {
-      textPosition -= 10;
+      textPosition += -5;
     }
 
     if (textPosition == textPositionTarget) {
-      clearInterval(textInterval);
+      return;
     }
-  }, 10);
+
+    requestAnimationFrame(animateText);
+  };
+
+  requestAnimationFrame(animateHeight);
+  requestAnimationFrame(animateText);
 };
 
 export const mobileMenuAnimation = (mobileNavIcon, mobileMenuIsOpen) => {
