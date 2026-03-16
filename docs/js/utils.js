@@ -17,7 +17,7 @@ export const animateToastMessage = (toastMessage, toastStatus, toastText) => {
   toastMessage.textContent = toastText;
 
   const lowestPoint = 0;
-  const highestPoint = -200;
+  const highestPoint = -250;
   let counter = highestPoint;
 
   const animateDown = setInterval(() => {
