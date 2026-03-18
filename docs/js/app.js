@@ -133,10 +133,17 @@ projectInfo.map((project) => {
   hyperLinkElement.href = link;
   hyperLinkElement.target = "_blank";
 
+  const imageContainer = document.createElement("div");
+  const text = document.createElement("span");
+  text.textContent = "View Project";
+
   // create the image
   const imageElement = document.createElement("img");
   imageElement.src = image;
   imageElement.alt = imageAlt;
+
+  imageContainer.appendChild(imageElement);
+  imageContainer.appendChild(text);
 
   // ======== IMAGE SECTION ======== //
   // add the image container to the card
@@ -144,7 +151,7 @@ projectInfo.map((project) => {
   // add the hyperlink and image to the image container
   projectCardImageContainerElement.appendChild(hyperLinkElement);
   // wrap the image in the <a></a> tag
-  hyperLinkElement.appendChild(imageElement);
+  hyperLinkElement.appendChild(imageContainer);
 
   // ======== INFO SECTION ======== //
   const projectInfoSectionElement = document.createElement("div");
@@ -322,4 +329,24 @@ for (let i = 0; i < formElements.length; i++) {
 
 for (let i = 0; i < socialOptions.length; i++) {
   observer.observe(socialOptions[i]);
+}
+
+const projectCardImages = document.querySelectorAll(
+  ".project-card-image-container img",
+);
+
+const hiddenImageText = document.querySelectorAll(
+  ".project-card-image-container a div span",
+);
+
+for (let i = 0; i < projectCardImages.length; i++) {
+  projectCardImages[i].addEventListener("mouseover", () => {
+    hiddenImageText[i].style.opacity = "1";
+  });
+}
+
+for (let i = 0; i < projectCardImages.length; i++) {
+  projectCardImages[i].addEventListener("mouseleave", () => {
+    hiddenImageText[i].style.opacity = "0";
+  });
 }

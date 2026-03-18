@@ -12,10 +12,37 @@
   width: 100%;
 }
 
+.project-card-image-container a div {
+  position: relative;
+}
+
+.project-card-image-container a div span {
+  opacity: 0;
+  
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-inline: auto; 
+  width: fit-content;
+
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: max-content;
+}
+
+
 .project-card-image-container img {
   width: 100%;
   height: 10rem;
   object-fit: contain;
+
+  transition: filter ease 400ms;
+}
+
+.project-card-image-container img:hover {
+  filter: brightness(0.2);
 }
 
 .card {
