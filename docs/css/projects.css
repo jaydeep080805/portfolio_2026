@@ -96,12 +96,15 @@
   .card {
     width: 30rem;
 
-    opacity: 1;
-    transform: translate(0, 20px) scale(0);
+    opacity: 0;
+    transform: translate(0, 20px);
     
     transition: background-color ease 200ms, opacity ease 400ms, transform ease 600ms;
   }
 
+  .card.show {
+    opacity: 1;
+  }
 
   .card:hover {
     background-color: #111111cc;
@@ -119,6 +122,26 @@
 
     transition: all ease 400ms;
   }
+
+
+  /* This stops the user from being blinded with the gradient colour when the project cards come into the viewport */
+  .card::after {
+    content: "";
+    position: absolute;
+
+    /* this does the same as translate, but on the z axis aswell 
+    this allows the background colour gradient to be behind the card */
+    transform: translate3d(0px, 0px, -1px);
+
+
+    background-color: var(--card-bg-color);
+    
+
+    /* controls how far the colour is from the parent element .card
+    a negative value needs to be used so that it shows around the card instead of inside */
+    inset: -1px;
+  }
+
 
   .card:hover::before {
     background: linear-gradient(
