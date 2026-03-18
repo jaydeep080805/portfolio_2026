@@ -78,95 +78,66 @@ export const mobileMenuAnimation = (mobileNavIcon, mobileMenuIsOpen) => {
 
 export const animateHomeText = () => {
   const text = "Hi I'm Jay, a Junior Software Engineer";
-  // const homeText = document.querySelector(".typing-animation-container h2");
   const homeTextContainer = document.querySelector(
     ".typing-animation-container",
   );
 
   const letterList = text.split("");
-  // const wordList = text.split(" ");
 
-  // console.log(wordList);
-
-  // let wordElementList = [];
-  // let letterElementList = [];
-
-  // wordList.forEach((element) => {
-  //   // console.log("new word should be here");
-
-  //   wordElementList = [];
-  //   letterElementList = [];
-
-  //   const wordElement = document.createElement("span");
-  //   wordElement.classList.add("word");
-
-  //   for (let i = 0; i < element.length; i++) {
-  //     // console.log(element[i]);
-
-  //     const newLetterElement = document.createElement("span");
-  //     newLetterElement.textContent = element[i];
-  //     newLetterElement.classList.add("letter");
-
-  //     if (i == element.length - 1) {
-  //       // add margin when the word is finished
-  //       newLetterElement.classList.add("last-letter-of-word");
-  //     }
-
-  //     letterElementList.push(newLetterElement);
-  //   }
-
-  //   // add the individual letters as nested lists so they can be processed as words
-
-  //   for (let i = 0; i)
-
-  //   letterElementList.forEach((letterElement) => {
-  //     letterElement.classList.contains("last-letter-of-word");
-
-  //     // if (letterElement.classList.contains("last-letter-of-word")) {
-  //     //   console.log("end of word");
-  //     // } else {
-  //     //   console.log("no end");
-  //     // }
-  //   });
-
-  //   // letterElementList.map((letterElement) => {
-  //   //   wordElementList.push([letterElement]);
-  //   // });
-
-  //   // wordElementList.map((element) => {
-  //   //   console.log(element);
-  //   // });
-
-  //   // add each word to the container
-  //   // wordElementList.map((element) => {
-  //   //   console.log(element);
-
-  //   //   homeTextContainer.appendChild(element);
-  //   // });
-  // });
-
-  // homeTextContainer.appendChild();
-  // console.log(wordElementList);
-
-  // create a container for each word so they can wrap properly on mobile
-  const wordContainer = document.createElement("div");
+  let wordList = [];
+  let temporaryWord = [];
 
   for (let i = 0; i < letterList.length; i++) {
+    // create seperate spans for each letter
     const newLetterElement = document.createElement("span");
     newLetterElement.textContent = letterList[i];
     newLetterElement.classList.add("letter");
 
+    // add the letters to a temporary word list
+    // this will allow for keeping track of each word so that the word can scale properly on mobile
+    temporaryWord.push(newLetterElement);
+
+    // add margin when there is a space to seperate words
     if (newLetterElement.textContent == " ") {
       newLetterElement.style.marginLeft = "1rem";
+
+      // add the letters to the word list as a nested list
+      // the structure will be like this: [
+      // [letter.span, letter.span, letter.span],
+      // [letter.span, letter.span, letter.span, letter.span, letter.span]
+      // ]
+      wordList.push(temporaryWord);
+
+      // clear the temp list so that it doesn't push the whole text multiple times
+      temporaryWord = [];
+    }
+
+    // makes sure to include the last word
+    // the last word doesn't have a space at the end so the above if statement wont account for the last word
+    if (i == letterList.length - 1) {
+      wordList.push(temporaryWord);
     }
 
     // adds a translate y so the letters animate up slightly
-    newLetterElement.style.transform = "translateY(4px)";
+    newLetterElement.style.transform = "translateY(5px)";
 
     // set the opacity to 0 for the fade in effect to make the animation smoother
     newLetterElement.style.opacity = 0;
-    homeTextContainer.appendChild(newLetterElement);
   }
+
+  // loop through each word and create a seperate div to contain the words
+  wordList.map((word) => {
+    const wordElement = document.createElement("div");
+    wordElement.classList.add("word");
+
+    // loop through each letter and add it tot he word element
+    word.forEach((letter) => {
+      wordElement.appendChild(letter);
+    });
+
+    // add the word div element to the container
+    homeTextContainer.appendChild(wordElement);
+  });
 
   // get a list of the letters that have been added
   // this gets the span elements not the actual list which is stored in letterList
@@ -175,7 +146,10 @@ export const animateHomeText = () => {
   for (let i = 0; i < letters.length; i++) {
     setTimeout(() => {
       letters[i].style.opacity = 1;
-      letters[i].classList.add("last-letter");
+
+      if (letters[i].textContent != " ") {
+        letters[i].classList.add("last-letter");
+      }
 
       letters[i].style.transform = "translateY(0)";
 

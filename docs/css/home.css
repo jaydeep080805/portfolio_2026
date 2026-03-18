@@ -11,9 +11,23 @@
   margin: 0 0.75rem;
   font-size: 3rem;
   font-weight: 600;
+
+  /* display: flex; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.typing-animation-container span {
+.typing-animation-container .word {
+  /* display: flex; */
+  width: min-content;
+  height: min-content;
+  display: flex;
+}
+
+.typing-animation-container .letter {
   display: inline-block;
 
   transition: opacity ease 200ms, transform ease 400ms;
