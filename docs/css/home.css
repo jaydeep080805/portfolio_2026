@@ -7,11 +7,20 @@
 }
 
 
-.typing-animation-container h2 {
-  margin: 0 0.5rem;
+.typing-animation-container {
+  margin: 0 0.75rem;
+  font-size: 3rem;
+  font-weight: 600;
 }
 
-.typing-animation-container h2::after {
+.typing-animation-container span {
+  display: inline-block;
+
+  transition: opacity ease 200ms, transform ease 400ms;
+}
+
+
+.typing-animation-container span.last-letter::after {
   content: "";
   position: absolute;
   
@@ -21,8 +30,7 @@
   margin-left: 1px;
   margin-top: 20px;
   
-  animation: caret-blink 1s linear infinite normal 5s;
-
+  animation: caret-blink 1s linear infinite normal 2s;
 }
 
 
