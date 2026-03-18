@@ -10,6 +10,15 @@
 /* mobile edge spacing */
 .about-section {
   margin: 0 1rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity ease 2000ms, transform ease 2000ms;
+}
+
+.about-section.show {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
 }
 
 .skills-section .skill-card-container {
@@ -37,7 +46,7 @@
   transition: box-shadow ease 200ms, transform ease 1000ms, opacity ease 2000ms;
 }
 
-.skills-section .show {
+.stack-card.show {
   opacity: 1;
   transform: translateX(0px);
 }
@@ -94,7 +103,7 @@
     transition: box-shadow ease 200ms, transform ease 200ms, opacity ease 800ms;
   }
 
-  .skills-section .show {
+  .stack-card.show {
     opacity: 1;
     transform: translate(0, 0);
   }

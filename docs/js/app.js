@@ -279,7 +279,12 @@ document.addEventListener("DOMContentLoaded", () => {
 =====================================================
 */
 
+const aboutSection = document.querySelector(".about-section");
+console.log(aboutSection);
+
 const stackCards = document.querySelectorAll(".stack-card");
+
+// this allows for detecting elements off the screen (for mobile)
 const options = {
   rootMargin: "150px 0px 200px 400px",
   threshold: 1,
@@ -287,7 +292,9 @@ const options = {
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry.isIntersecting);
+    console.log(entry.target, `- ${entry.isIntersecting}`);
+
+    console.log(entry.target.classList);
 
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
@@ -299,6 +306,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, options);
 
+observer.observe(aboutSection);
 for (let i = 0; i < stackCards.length; i++) {
   observer.observe(stackCards[i]);
 }
