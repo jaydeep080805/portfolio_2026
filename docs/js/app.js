@@ -280,22 +280,17 @@ document.addEventListener("DOMContentLoaded", () => {
 */
 
 const aboutSection = document.querySelector(".about-section");
-console.log(aboutSection);
-
 const stackCards = document.querySelectorAll(".stack-card");
+const projectCards = document.querySelectorAll(".card");
 
 // this allows for detecting elements off the screen (for mobile)
 const options = {
   rootMargin: "150px 0px 200px 400px",
-  threshold: 1,
+  threshold: 0.8,
 };
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry.target, `- ${entry.isIntersecting}`);
-
-    console.log(entry.target.classList);
-
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
       // entry.target.classList.remove("hide");
@@ -309,4 +304,8 @@ const observer = new IntersectionObserver((entries) => {
 observer.observe(aboutSection);
 for (let i = 0; i < stackCards.length; i++) {
   observer.observe(stackCards[i]);
+}
+
+for (let i = 0; i < projectCards.length; i++) {
+  observer.observe(projectCards[i]);
 }

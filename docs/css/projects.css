@@ -25,11 +25,18 @@
 
   background-color: var(--card-bg-color);
 
+  transform: translateX(-400px);
+  transition: transform ease 800ms;
+  
   position: relative;
 
   /* without this, the gradient will be placed on top of the card instead of behind
   this preserves the Z posiiton on the child element */
   transform-style: preserve-3d;
+}
+
+.card.show {
+  transform: translate(0, 0) scale(1);
 }
 
 .card::before {
@@ -88,8 +95,13 @@
 
   .card {
     width: 30rem;
-    transition: background-color ease 200ms;
+
+    opacity: 1;
+    transform: translate(0, 20px) scale(0);
+    
+    transition: background-color ease 200ms, opacity ease 400ms, transform ease 600ms;
   }
+
 
   .card:hover {
     background-color: #111111cc;
