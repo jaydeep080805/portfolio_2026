@@ -28,10 +28,18 @@
   border-radius: var(--card-border-radius);
   min-height: fit-content;
 
+  opacity: 0;
+  transform: translateX(-400px);
+
   padding: 2rem 1rem;
   box-shadow: 0.5rem 0.5rem var(--skill-card-box-shadow-color);
 
-  transition: all ease 200ms;
+  transition: box-shadow ease 200ms, transform ease 1000ms, opacity ease 2000ms;
+}
+
+.skills-section .show {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 .skills-section .stack-card > h3 {
@@ -78,6 +86,17 @@
 @media (min-width: 800px) {
   .about-section {
     margin: 0 20rem;
+  }
+
+  .skills-section .stack-card {
+    opacity: 0;
+    transform: translate(0, 10px);
+    transition: box-shadow ease 200ms, transform ease 200ms, opacity ease 800ms;
+  }
+
+  .skills-section .show {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 
   .skills-section .stack-card:hover {

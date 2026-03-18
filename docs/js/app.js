@@ -278,13 +278,27 @@ document.addEventListener("DOMContentLoaded", () => {
 ======== OBSERVE WHEN ELEMENTS ARE IN THE VIEWPORT ======== 
 =====================================================
 */
-const about = document.getElementById("about");
+
+const stackCards = document.querySelectorAll(".stack-card");
+const options = {
+  rootMargin: "150px 0px 200px 400px",
+  threshold: 1,
+};
 
 const observer = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting == true) {
-    console.log("in view");
-  } else {
-    console.log("not in view");
-  }
-});
-observer.observe(about);
+  entries.forEach((entry) => {
+    console.log(entry.isIntersecting);
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      // entry.target.classList.remove("hide");
+    } else {
+      entry.target.classList.remove("show");
+      // entry.target.classList.add("hide");
+    }
+  });
+}, options);
+
+for (let i = 0; i < stackCards.length; i++) {
+  observer.observe(stackCards[i]);
+}
