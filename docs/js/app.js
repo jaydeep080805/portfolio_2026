@@ -1,10 +1,14 @@
 const toastMessage = document.getElementById("toast-message");
 const contactSubmitButton = document.getElementById("contact-submit-button");
 import { API_URL } from "./config.js";
-import { animateToastMessage, checkEmailValid } from "./utils.js";
+import { checkEmailValid } from "./utils.js";
 import { projectInfo } from "./projectList.js";
 import { toolsList } from "./toolsList.js";
-import { animateHomeText, mobileMenuAnimation } from "./animations.js";
+import {
+  animateHomeText,
+  mobileMenuAnimation,
+  animateToastMessage,
+} from "./animations.js";
 
 /* 
 =====================================================
