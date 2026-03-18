@@ -30,6 +30,18 @@ form {
   width: 100%;
 }
 
+form * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity ease 800ms, transform ease 800ms;
+}
+
+form *.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 form label {
   font-size: 1.25rem;
 }
@@ -94,6 +106,18 @@ form button {
   margin-top: 2rem;
   width: fit-content;
 }
+
+.social-option {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity ease 800ms, transform ease 800ms;
+}
+
+.social-option.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .social-option a {
   padding: 0.75rem 1rem;

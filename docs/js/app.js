@@ -282,6 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const aboutSection = document.querySelector(".about-section");
 const stackCards = document.querySelectorAll(".stack-card");
 const projectCards = document.querySelectorAll(".card");
+const formElements = document.querySelectorAll("form *");
+const socialOptions = document.querySelectorAll(".social-option");
 
 // this allows for detecting elements off the screen (for mobile)
 const options = {
@@ -308,4 +310,12 @@ for (let i = 0; i < stackCards.length; i++) {
 
 for (let i = 0; i < projectCards.length; i++) {
   observer.observe(projectCards[i]);
+}
+
+for (let i = 0; i < formElements.length; i++) {
+  observer.observe(formElements[i]);
+}
+
+for (let i = 0; i < socialOptions.length; i++) {
+  observer.observe(socialOptions[i]);
 }
