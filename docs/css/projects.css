@@ -97,13 +97,14 @@
     width: 30rem;
 
     opacity: 0;
-    transform: translate(0, 20px);
+    transform: translate(0, 50px);
     
     transition: background-color ease 200ms, opacity ease 400ms, transform ease 600ms;
   }
 
   .card.show {
     opacity: 1;
+    transform: translate(0, 0);
   }
 
   .card:hover {
@@ -134,7 +135,7 @@
     transform: translate3d(0px, 0px, -1px);
 
 
-    background-color: var(--card-bg-color);
+    background-color: var(--primary-bg-color);
     
 
     /* controls how far the colour is from the parent element .card
