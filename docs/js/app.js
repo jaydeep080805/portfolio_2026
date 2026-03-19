@@ -291,30 +291,46 @@ document.addEventListener("DOMContentLoaded", () => {
 */
 
 const aboutSection = document.querySelector(".about-section");
+const skillSection = document.querySelector(".skills-section");
 const stackCards = document.querySelectorAll(".stack-card");
+
 const projectCards = document.querySelectorAll(".card");
 const formElements = document.querySelectorAll("form *");
 const socialOptions = document.querySelectorAll(".social-option");
 
 // this allows for detecting elements off the screen (for mobile)
-const options = {
+const observerOptions = {
   rootMargin: "150px 0px 200px 400px",
-  threshold: 0.8,
+  threshold: 0.6,
 };
+
+const highObserverOptions = {
+  threshold: 0.2,
+};
+
+const highObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+}, highObserverOptions);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-      // entry.target.classList.remove("hide");
     } else {
       entry.target.classList.remove("show");
-      // entry.target.classList.add("hide");
     }
   });
-}, options);
+}, observerOptions);
 
 observer.observe(aboutSection);
+highObserver.observe(skillSection);
+
 for (let i = 0; i < stackCards.length; i++) {
   observer.observe(stackCards[i]);
 }

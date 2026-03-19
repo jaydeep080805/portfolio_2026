@@ -13,10 +13,25 @@
 
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity ease 2000ms, transform ease 2000ms;
+  transition:
+    opacity ease 2000ms,
+    transform ease 2000ms;
 }
 
 .about-section.show {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.skills-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity ease 2000ms,
+    transform ease 2000ms;
+}
+
+.skills-section.show {
   opacity: 1;
   transform: translateY(0px);
 }
@@ -43,7 +58,10 @@
   padding: 2rem 1rem;
   box-shadow: 0.5rem 0.5rem var(--skill-card-box-shadow-color);
 
-  transition: box-shadow ease 200ms, transform ease 1000ms, opacity ease 2000ms;
+  transition:
+    box-shadow ease 200ms,
+    transform ease 1000ms,
+    opacity ease 2000ms;
 }
 
 .stack-card.show {
@@ -101,7 +119,10 @@
   .skills-section .stack-card {
     opacity: 0;
     transform: translate(0, 10px);
-    transition: box-shadow ease 200ms, transform ease 200ms, opacity ease 800ms;
+    transition:
+      box-shadow ease 200ms,
+      transform ease 200ms,
+      opacity ease 800ms;
   }
 
   .stack-card.show {
