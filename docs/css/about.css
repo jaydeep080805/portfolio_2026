@@ -94,7 +94,8 @@
 
 @media (min-width: 800px) {
   .about-section {
-    margin: 0 20rem;
+    margin-inline: auto;
+    margin: 0 10rem;
   }
 
   .skills-section .stack-card {
