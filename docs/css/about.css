@@ -17,8 +17,8 @@
 }
 
 .about-section.show {
-  opacity: 1 !important;
-  transform: translateY(0px) !important;
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 .skills-section .skill-card-container {
