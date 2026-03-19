@@ -91,7 +91,7 @@ contactSubmitButton.addEventListener("click", async (e) => {
     animateToastMessage(
       toastMessage,
       "success",
-      "Sucessfully recieved email, please check your spam for confirmation",
+      "Successfully recieved email, please check your spam for confirmation",
     );
 
     // reset the input boxes

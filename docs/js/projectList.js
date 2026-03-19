@@ -44,7 +44,7 @@ export const projectInfo = [
     link: "#",
     image: "./images/portfolio.png",
     imageAlt: "Screenshot of weather app front page",
-    title: "Porfolio (this site)",
+    title: "Porfolio",
     tools: ["JavaScript", "Express", "Jest", "Supertest", "API"],
     toolColours: ["javascript", "express", "jest", "supertest", "api"],
     description: `Personal developer portfolio built with JavaScript and Express. Designed with a responsive layout and modular structure following DRY principles. Includes automated tests using Jest and Supertest and integrates backend email functionality.   
@@ -79,6 +79,6 @@ export const projectInfo = [
     title: "Photo Batch Convert",
     tools: ["Python", "Pillow", "OS"],
     toolColours: ["python", "pillow", "os"],
-    description: `Python automation script used to batch convert all files in a folder containing the extension .heif into .jpg. It can be easily altered to accomodate any extension`,
+    description: `Python automation script used to batch convert all files in a folder containing the extension .heif into .jpg. It can be easily altered to accommodate any extension`,
   },
 ];
