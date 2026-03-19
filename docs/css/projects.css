@@ -18,11 +18,11 @@
 
 .project-card-image-container a div span {
   opacity: 0;
-  
-  position: absolute; 
-  left: 0; 
-  right: 0; 
-  margin-inline: auto; 
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
   width: fit-content;
 
   top: 0;
@@ -31,7 +31,6 @@
   margin-bottom: auto;
   height: max-content;
 }
-
 
 .project-card-image-container img {
   width: 100%;
@@ -54,7 +53,7 @@
 
   transform: translateX(-400px);
   transition: transform ease 800ms;
-  
+
   position: relative;
 
   /* without this, the gradient will be placed on top of the card instead of behind
@@ -125,8 +124,11 @@
 
     opacity: 0;
     transform: translate(0, 50px);
-    
-    transition: background-color ease 200ms, opacity ease 400ms, transform ease 600ms;
+
+    transition:
+      background-color ease 200ms,
+      opacity ease 400ms,
+      transform ease 600ms;
   }
 
   .card.show {
@@ -151,7 +153,6 @@
     transition: all ease 400ms;
   }
 
-
   /* This stops the user from being blinded with the gradient colour when the project cards come into the viewport */
   .card::after {
     content: "";
@@ -161,15 +162,12 @@
     this allows the background colour gradient to be behind the card */
     transform: translate3d(0px, 0px, -1px);
 
-
     background-color: var(--primary-bg-color);
-    
 
     /* controls how far the colour is from the parent element .card
     a negative value needs to be used so that it shows around the card instead of inside */
     inset: -1px;
   }
-
 
   .card:hover::before {
     background: linear-gradient(
