@@ -197,15 +197,14 @@ form button {
   }
 
   form {
-    width: 50%;
-    margin-left: auto;
-    margin-right: 2rem;
+    width: 60%;
+    margin-inline: auto;
+    /* margin-left: auto;
+    margin-right: 2rem; */
   }
 
   .socials {
     grid-area: socials;
-    width: 100%;
-    margin-left: 2rem;
   }
 
   .horizontal-separator {
