@@ -78,7 +78,7 @@ form textarea {
 }
 
 form input:focus, 
-form textarea:hover {
+form textarea:focus {
   border: 1px solid var(--contact-input-border-color);
 }
 
