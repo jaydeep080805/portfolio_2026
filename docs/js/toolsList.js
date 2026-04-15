@@ -40,6 +40,14 @@ export const toolsList = {
       icon: "./images/icons/tailwind.png",
     },
 
+    {
+      name: "Flask",
+      colorName: "flask",
+      fillAmount: 4,
+      skillLevel: "learning",
+      icon: "./images/icons/flask.webp",
+    },
+
     // {
     //   name: "PHP",
     //   colorName: "php",
@@ -83,11 +91,11 @@ export const toolsList = {
     },
 
     {
-      name: "Flask",
-      colorName: "flask",
+      name: "Java",
+      colorName: "java",
       fillAmount: 4,
       skillLevel: "learning",
-      icon: "./images/icons/flask.webp",
+      icon: "./images/icons/java.png",
     },
 
     // {
@@ -164,6 +172,22 @@ export const toolsList = {
       fillAmount: 3,
       skillLevel: "learning",
       icon: "./images/icons/jest.svg",
+    },
+
+    {
+      name: "XUnit",
+      colorName: "jest",
+      fillAmount: 3,
+      skillLevel: "learning",
+      icon: "./images/icons/xunit.png",
+    },
+
+    {
+      name: "JUnit",
+      colorName: "jest",
+      fillAmount: 3,
+      skillLevel: "learning",
+      icon: "./images/icons/junit.png",
     },
   ],
 };

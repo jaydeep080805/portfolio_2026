@@ -237,38 +237,38 @@ for (let stack in toolsList) {
     // add the name for each skill
     const skillName = document.createElement("span");
     skillName.classList.add("skill-name");
-    skillName.textContent = ` ${name} - `;
+    skillName.textContent = ` ${name}`;
 
     // add icon to the wrapper
     skillWrapper.appendChild(skillIcon);
     // add the name to the wrapper
     skillWrapper.appendChild(skillName);
 
-    for (let i = 0; i < 5; i++) {
-      // create a .dot class
-      const dot = document.createElement("div");
-      dot.classList.add("dot");
+    // for (let i = 0; i < 5; i++) {
+    //   // create a .dot class
+    //   const dot = document.createElement("div");
+    //   dot.classList.add("dot");
 
-      // check how many dots should be filled
-      if (i < fillAmount) {
-        // set the class to be filled
-        dot.classList.add("filled-dot");
+    //   // check how many dots should be filled
+    //   if (i < fillAmount) {
+    //     // set the class to be filled
+    //     dot.classList.add("filled-dot");
 
-        // add the hover events
-        dot.addEventListener("mouseover", () => {
-          dot.style.backgroundColor = `var(--${colorName}-text-color)`;
-        });
+    //     // add the hover events
+    //     dot.addEventListener("mouseover", () => {
+    //       dot.style.backgroundColor = `var(--${colorName}-text-color)`;
+    //     });
 
-        dot.addEventListener("mouseleave", () => {
-          setTimeout(() => {
-            dot.style.backgroundColor = "white";
-          }, 2000);
-        });
-      }
+    //     dot.addEventListener("mouseleave", () => {
+    //       setTimeout(() => {
+    //         dot.style.backgroundColor = "white";
+    //       }, 2000);
+    //     });
+    //   }
 
-      // add the dots to the end of the wrapper
-      skillWrapper.appendChild(dot);
-    }
+    //   // add the dots to the end of the wrapper
+    //   skillWrapper.appendChild(dot);
+    // }
 
     // add the wrapper to the card
     stackCard.appendChild(skillWrapper);
