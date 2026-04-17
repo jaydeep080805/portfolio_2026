@@ -232,6 +232,7 @@ for (let stack in toolsList) {
     // add an icon to the start of each skill
     const skillIcon = document.createElement("img");
     skillIcon.classList.add("skill-icon");
+    skillIcon.alt = `${name} icon`;
     skillIcon.src = icon;
 
     // add the name for each skill
