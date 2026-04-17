@@ -85,7 +85,7 @@ export const projectInfo = [
   {
     link: "https://github.com/jaydeep080805/titanic_analysis",
     image: "./images/titanic_analysis.png",
-    imageAlt: "Surival by age plot",
+    imageAlt: "Survival by age plot",
     title: "Titanic Analysis",
     tools: ["Jupyter", "Seaborn", "Pandas", "Matplotlib"],
     toolColours: ["jupyter", "seaborn", "pandas", "matplotlib"],
