@@ -79,6 +79,16 @@ export const projectInfo = [
     title: "Photo Batch Convert",
     tools: ["Python", "Pillow", "OS"],
     toolColours: ["python", "pillow", "os"],
-    description: `Python automation script used to batch convert all files in a folder containing the extension .heif into .jpg. It can be easily altered to accommodate any extension`,
+    description: `Python automation script used to batch convert all files in a folder containing the extension .heif into .jpg. It can be easily altered to accommodate any extension.`,
+  },
+
+  {
+    link: "https://github.com/jaydeep080805/titanic_analysis",
+    image: "./images/titanic_analysis.png",
+    imageAlt: "Surival by age plot",
+    title: "Titanic Analysis",
+    tools: ["Jupyter", "Seaborn", "Pandas", "Matplotlib"],
+    toolColours: ["jupyter", "seaborn", "pandas", "matplotlib"],
+    description: `Jupyter notebook project to analyse a dataset based on the titanic. It sets out to find correlations between different variables and the survival rate.`,
   },
 ];

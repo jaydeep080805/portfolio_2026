@@ -106,6 +106,10 @@
   --mysql-text-color: #4de9f1;
   --pillow-text-color: #00f2ff;
   --os-text-color: #79ffca;
+  --pandas-text-color: #924df9;
+  --seaborn-text-color: #4f54a3;
+  --matplotlib-text-color: #2feaee;
+  --jupyter-text-color: #ee882f;
 
   --learning--bar-fill: 25%;
   --working--bar-fill: 50%;
